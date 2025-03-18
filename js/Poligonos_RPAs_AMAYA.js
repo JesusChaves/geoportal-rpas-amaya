@@ -1,38 +1,14 @@
 var poligonosRPAs = {
     "type": "FeatureCollection",
-    "name": "Geoportal_RPAs_AMAYA",
-    "crs": {
-        "type": "name",
-        "properties": {
-            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-        }
-    },
     "features": [
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20241028_FdP_PHOROS_Senra",
-                "dwc:locality": "Isla de Senra. Laguna de Fuente de Piedra",
-                "dwc:decimalLongitude": "-4,769055",
-                "dwc:decimalLatitude": "37,107269",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-10-28T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 1.233,
-                "altitude_(m)": 35,
-                "area_(ha)": "12,8",
-                "GSD_(cm/px)": "0,95",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Fin obra restauracion Isla de Senra",
-                "Thumbnail": "SI"
+                "mision": "20241028_FdP_PHOROS_Senra",
+                "fecha": "28/10/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Fin obra restauracion Isla de Senra",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69,28 +45,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20241028_FdP_San_Luis",
-                "dwc:locality": "Isla San Luis. Laguna de Fuente de Piedra",
-                "dwc:decimalLongitude": "-4,762328",
-                "dwc:decimalLatitude": "37,116158",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-10-28T12:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 1.177,
-                "altitude_(m)": 35,
-                "area_(ha)": "7,8",
-                "GSD_(cm/px)": "0,95",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Fin obra restauracion Isla de San Luis",
-                "Thumbnail": "SI"
+                "mision": "20241028_FdP_PHOROS_Senra",
+                "fecha": "28/10/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Fin obra restauracion Isla de Senra",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.769055,
+                    37.107269
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20241028_FdP_San_Luis",
+                "fecha": "28/10/2024",
+                "localidad": "Isla San Luis. Laguna de Fuente de Piedra",
+                "descripcion": "Fin obra restauracion Isla de San Luis",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -123,28 +99,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240621_Colonia_PHOROS_FdP",
-                "dwc:locality": "Isla de Senra. Laguna de Fuente de Piedra",
-                "dwc:decimalLongitude": "-4,768628",
-                "dwc:decimalLatitude": "37,108518",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-06-21T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 230.0,
-                "altitude_(m)": 100,
-                "area_(ha)": "31,6",
-                "GSD_(cm/px)": "2,86",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento reproduccion colonia flamencos. Fracaso conteo Nidos",
-                "Thumbnail": "SI"
+                "mision": "20241028_FdP_San_Luis",
+                "fecha": "28/10/2024",
+                "localidad": "Isla San Luis. Laguna de Fuente de Piedra",
+                "descripcion": "Fin obra restauracion Isla de San Luis",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.762328,
+                    37.116158
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240621_Colonia_PHOROS_FdP",
+                "fecha": "21/06/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Seguimiento reproduccion colonia flamencos. Fracaso conteo Nidos",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -197,28 +173,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240430_PHOROS_FdP",
-                "dwc:locality": "Isla de Senra. Laguna de Fuente de Piedra",
-                "dwc:decimalLongitude": "-4,770044",
-                "dwc:decimalLatitude": "37,106978",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-04-30T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 230.0,
-                "altitude_(m)": 100,
-                "area_(ha)": "31,6",
-                "GSD_(cm/px)": "2,86",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento reproduccion colonia flamencos. Maxima ocupacion",
-                "Thumbnail": "SI"
+                "mision": "20240621_Colonia_PHOROS_FdP",
+                "fecha": "21/06/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Seguimiento reproduccion colonia flamencos. Fracaso conteo Nidos",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.768628,
+                    37.108518
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240430_PHOROS_FdP",
+                "fecha": "30/04/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Seguimiento reproduccion colonia flamencos. Maxima ocupacion",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -271,28 +247,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240201_Embalse_Corodbilla",
-                "dwc:locality": "Embalse Cordobilla. Garcera",
-                "dwc:decimalLongitude": "-4,718731",
-                "dwc:decimalLatitude": "37,357810",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-02-01T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 88.0,
-                "altitude_(m)": 80,
-                "area_(ha)": "2,7",
-                "GSD_(cm/px)": "2,15",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento Garcera embalse.",
-                "Thumbnail": "SI"
+                "mision": "20240430_PHOROS_FdP",
+                "fecha": "30/04/2024",
+                "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
+                "descripcion": "Seguimiento reproduccion colonia flamencos. Maxima ocupacion",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.770044,
+                    37.106978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240201_Embalse_Corodbilla",
+                "fecha": "01/02/2024",
+                "localidad": "Embalse Cordobilla. Garcera",
+                "descripcion": "Seguimiento Garcera embalse.",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -333,28 +309,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240521_Don_Melendo",
-                "dwc:locality": "Embalse D. Melendo. Garcera",
-                "dwc:decimalLongitude": "-6,029185",
-                "dwc:decimalLatitude": "36,970278",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-05-21T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 197.0,
-                "altitude_(m)": 80,
-                "area_(ha)": "9,8",
-                "GSD_(cm/px)": "2,15",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento Garcera embalse D. Melendo",
-                "Thumbnail": "SI"
+                "mision": "20240201_Embalse_Corodbilla",
+                "fecha": "01/02/2024",
+                "localidad": "Embalse Cordobilla. Garcera",
+                "descripcion": "Seguimiento Garcera embalse.",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.718731,
+                    37.35781
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240521_Don_Melendo",
+                "fecha": "21/05/2024",
+                "localidad": "Embalse D. Melendo. Garcera",
+                "descripcion": "Seguimiento Garcera embalse D. Melendo",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -387,28 +363,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240514_Pantano_Los_Palacios",
-                "dwc:locality": "Pantano de los Palacios. Garceras y moritos",
-                "dwc:decimalLongitude": "-5,901729",
-                "dwc:decimalLatitude": "37,150740",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-05-15T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 335.0,
-                "altitude_(m)": 90,
-                "area_(ha)": "20,6",
-                "GSD_(cm/px)": "2,42",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento de colonia garcera",
-                "Thumbnail": "SI"
+                "mision": "20240521_Don_Melendo",
+                "fecha": "21/05/2024",
+                "localidad": "Embalse D. Melendo. Garcera",
+                "descripcion": "Seguimiento Garcera embalse D. Melendo",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.029185,
+                    36.970278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240514_Pantano_Los_Palacios",
+                "fecha": "15/05/2024",
+                "localidad": "Pantano de los Palacios. Garceras y moritos",
+                "descripcion": "Seguimiento de colonia garcera",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -449,28 +425,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240412_Industria_02_PLALEU",
-                "dwc:locality": "Salina Industria. Bahia de Cadiz. Nucleo 02",
-                "dwc:decimalLongitude": "-6,202919",
-                "dwc:decimalLatitude": "36,428758",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-04-12T09:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 207.0,
-                "altitude_(m)": 100,
-                "area_(ha)": "16,3",
-                "GSD_(cm/px)": "2,69",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento reproducci\ufffdn colonia Espatulas Nucleo 2",
-                "Thumbnail": "SI"
+                "mision": "20240514_Pantano_Los_Palacios",
+                "fecha": "15/05/2024",
+                "localidad": "Pantano de los Palacios. Garceras y moritos",
+                "descripcion": "Seguimiento de colonia garcera",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.901729,
+                    37.15074
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240412_Industria_02_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 02",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 2",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -503,28 +479,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240412_Industria_01_PLALEU",
-                "dwc:locality": "Salina Industria. Bahia de Cadiz. Nucleo 01",
-                "dwc:decimalLongitude": "-6,199167",
-                "dwc:decimalLatitude": "36,426600",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-04-12T12:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 187.0,
-                "altitude_(m)": 100,
-                "area_(ha)": "17,8",
-                "GSD_(cm/px)": "2,96",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento reproducci\ufffdn colonia Espatulas Nucleo 1",
-                "Thumbnail": "SI"
+                "mision": "20240412_Industria_02_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 02",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 2",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.202919,
+                    36.428758
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240412_Industria_01_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 01",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 1",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -557,28 +533,28 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": "20240412_Vicario_PLALEU",
-                "dwc:locality": "Salina El vicario. Bahia de C\ufffddiz",
-                "dwc:decimalLongitude": "-6,177347",
-                "dwc:decimalLatitude": "36,456515",
-                "dwc:geodeticDatum": "EPSG:4326",
-                "dwc:institutionCode": "AMAYA",
-                "Department": "IDi",
-                "dwc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
-                "dwc:eventDate": "2024-04-12T13:00:00",
-                "FlightCat": "Fotogrametry",
-                "contact": "jesus.chaves.posadillo@juntadeandalucia.es",
-                "pilot": "Jesus Chaves",
-                "drone": "DJI M3E",
-                "sensor": "RGB",
-                "images": 137.0,
-                "altitude_(m)": 110,
-                "area_(ha)": "13,3",
-                "GSD_(cm/px)": "2,96",
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": "Seguimiento reproducci\ufffdn colonia Espatulas",
-                "Thumbnail": "SI"
+                "mision": "20240412_Industria_01_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 01",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 1",
+                "operador": "AMAYA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.199167,
+                    36.4266
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mision": "20240412_Vicario_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina El vicario. Bahia de C\u00e1diz",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas",
+                "operador": "AMAYA"
             },
             "geometry": {
                 "type": "Polygon",
@@ -615,156 +591,18 @@ var poligonosRPAs = {
         {
             "type": "Feature",
             "properties": {
-                "dwc:eventID": null,
-                "dwc:locality": null,
-                "dwc:decimalLongitude": null,
-                "dwc:decimalLatitude": null,
-                "dwc:geodeticDatum": null,
-                "dwc:institutionCode": null,
-                "Department": null,
-                "dwc:license": null,
-                "dwc:eventDate": null,
-                "FlightCat": null,
-                "contact": null,
-                "pilot": null,
-                "drone": null,
-                "sensor": null,
-                "images": null,
-                "altitude_(m)": null,
-                "area_(ha)": null,
-                "GSD_(cm/px)": null,
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": null,
-                "Thumbnail": null
+                "mision": "20240412_Vicario_PLALEU",
+                "fecha": "12/04/2024",
+                "localidad": "Salina El vicario. Bahia de C\u00e1diz",
+                "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas",
+                "operador": "AMAYA"
             },
             "geometry": {
-                "type": "Polygon",
-                "coordinates": []
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "dwc:eventID": null,
-                "dwc:locality": null,
-                "dwc:decimalLongitude": null,
-                "dwc:decimalLatitude": null,
-                "dwc:geodeticDatum": null,
-                "dwc:institutionCode": null,
-                "Department": null,
-                "dwc:license": null,
-                "dwc:eventDate": null,
-                "FlightCat": null,
-                "contact": null,
-                "pilot": null,
-                "drone": null,
-                "sensor": null,
-                "images": null,
-                "altitude_(m)": null,
-                "area_(ha)": null,
-                "GSD_(cm/px)": null,
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": null,
-                "Thumbnail": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": []
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "dwc:eventID": null,
-                "dwc:locality": null,
-                "dwc:decimalLongitude": null,
-                "dwc:decimalLatitude": null,
-                "dwc:geodeticDatum": null,
-                "dwc:institutionCode": null,
-                "Department": null,
-                "dwc:license": null,
-                "dwc:eventDate": null,
-                "FlightCat": null,
-                "contact": null,
-                "pilot": null,
-                "drone": null,
-                "sensor": null,
-                "images": null,
-                "altitude_(m)": null,
-                "area_(ha)": null,
-                "GSD_(cm/px)": null,
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": null,
-                "Thumbnail": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": []
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "dwc:eventID": null,
-                "dwc:locality": null,
-                "dwc:decimalLongitude": null,
-                "dwc:decimalLatitude": null,
-                "dwc:geodeticDatum": null,
-                "dwc:institutionCode": null,
-                "Department": null,
-                "dwc:license": null,
-                "dwc:eventDate": null,
-                "FlightCat": null,
-                "contact": null,
-                "pilot": null,
-                "drone": null,
-                "sensor": null,
-                "images": null,
-                "altitude_(m)": null,
-                "area_(ha)": null,
-                "GSD_(cm/px)": null,
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": null,
-                "Thumbnail": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": []
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "dwc:eventID": null,
-                "dwc:locality": null,
-                "dwc:decimalLongitude": null,
-                "dwc:decimalLatitude": null,
-                "dwc:geodeticDatum": null,
-                "dwc:institutionCode": null,
-                "Department": null,
-                "dwc:license": null,
-                "dwc:eventDate": null,
-                "FlightCat": null,
-                "contact": null,
-                "pilot": null,
-                "drone": null,
-                "sensor": null,
-                "images": null,
-                "altitude_(m)": null,
-                "area_(ha)": null,
-                "GSD_(cm/px)": null,
-                "GCP": "NO",
-                "groundtruth": "NO",
-                "Descrip": null,
-                "Thumbnail": null
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": []
+                "type": "Point",
+                "coordinates": [
+                    -6.177347,
+                    36.456515
+                ]
             }
         }
     ]

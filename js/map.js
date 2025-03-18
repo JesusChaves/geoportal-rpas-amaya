@@ -20,24 +20,31 @@ L.control.layers(baseMaps).addTo(map);
 L.control.zoom({ position: 'topright' }).addTo(map);
 
 // Añadir los polígonos
-L.geoJSON(poligonosRPAs, {
+var polygonsLayer = L.geoJSON(poligonosRPAs, {
+    filter: function (feature) {
+        return feature.geometry.type === "Polygon";
+    },
     style: function (feature) {
         return {
             color: "red",
             fillColor: "blue",
             fillOpacity: 0.4
         };
+    }
+}).addTo(map);
+
+// Añadir los puntos con ventanas emergentes
+var pointsLayer = L.geoJSON(poligonosRPAs, {
+    filter: function (feature) {
+        return feature.geometry.type === "Point";
     },
     onEachFeature: function (feature, layer) {
         let props = feature.properties || {};
-        let mision = props.mision ? props.mision : "No disponible";
-        let fecha = props.fecha ? props.fecha : "No disponible";
-        let descripcion = props.descripcion ? props.descripcion : "No disponible";
-    
-        let popupContent = `<b>Misión:</b> ${mision}<br>
-                            <b>Fecha:</b> ${fecha}<br>
-                            <b>Descripción:</b> ${descripcion}`;
-        
+        let popupContent = `<b>Misión:</b> ${props.mision || "No disponible"}<br>
+                            <b>Fecha:</b> ${props.fecha || "No disponible"}<br>
+                            <b>Localidad:</b> ${props.localidad || "No disponible"}<br>
+                            <b>Descripción:</b> ${props.descripcion || "No disponible"}<br>
+                            <b>Operador:</b> ${props.operador || "No disponible"}`;
         layer.bindPopup(popupContent);
     }
-    }).addTo(map);
+}).addTo(map);
