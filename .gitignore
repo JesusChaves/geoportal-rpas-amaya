@@ -1,0 +1,15 @@
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de entorno de desarrollo
+.vscode/
+node_modules/
+npm-debug.log
+
+# Ignorar cachés de Leaflet (si usas plugins que generen archivos temporales)
+*.log
+*.cache
+
+# Ignorar imágenes temporales o archivos de prueba (si los usaste)
+images/*.tmp
