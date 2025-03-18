@@ -29,8 +29,16 @@ L.geoJSON(poligonosRPAs, {
         };
     },
     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<b>Misión:</b> ' + feature.properties.mision + '<br>' +
-                        '<b>Fecha:</b> ' + feature.properties.fecha + '<br>' +
-                        '<b>Descripción:</b> ' + feature.properties.descripcion);
-    }
+        layer.bindPopup('<b>Misión:</b> ' + feature.properties.dwc:eventID + '<br>' +
+                        '<b>Fecha:</b> ' + feature.properties.dwc:eventDate + '<br>' +
+                        '<b>Localidad:</b> ' + feature.properties.dwc:locality);
+                        '<b>Descripción:</b> ' + feature.properties.Descrip);
+                        '<b>Altura vuelo (m):</b> ' + feature.properties.altitude_(m));
+                        '<b>Piloto:</b> ' + feature.properties.pilot);
+                        '<b>Dron:</b> ' + feature.properties.drone);
+                        '<b>Sensor:</b> ' + feature.properties.sensor);
+                        '<b>Tipo de vuelo:</b> ' + feature.properties.FlightCat);
+                        '<b>Departamento:</b> ' + feature.properties.Department);
+                        '<b>Contacto:</b> ' + feature.properties.contact);
+                    }
 }).addTo(map);
