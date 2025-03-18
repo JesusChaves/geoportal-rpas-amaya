@@ -8,7 +8,15 @@ var poligonosRPAs = {
                 "fecha": "28/10/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Fin obra restauracion Isla de Senra",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 35.0,
+                "gsd": 0.95,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -49,7 +57,15 @@ var poligonosRPAs = {
                 "fecha": "28/10/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Fin obra restauracion Isla de Senra",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 35.0,
+                "gsd": 0.95,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -66,7 +82,15 @@ var poligonosRPAs = {
                 "fecha": "28/10/2024",
                 "localidad": "Isla San Luis. Laguna de Fuente de Piedra",
                 "descripcion": "Fin obra restauracion Isla de San Luis",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 35.0,
+                "gsd": 0.95,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -103,7 +127,15 @@ var poligonosRPAs = {
                 "fecha": "28/10/2024",
                 "localidad": "Isla San Luis. Laguna de Fuente de Piedra",
                 "descripcion": "Fin obra restauracion Isla de San Luis",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 35.0,
+                "gsd": 0.95,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -120,7 +152,15 @@ var poligonosRPAs = {
                 "fecha": "21/06/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Seguimiento reproduccion colonia flamencos. Fracaso conteo Nidos",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.86,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -177,7 +217,15 @@ var poligonosRPAs = {
                 "fecha": "21/06/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Seguimiento reproduccion colonia flamencos. Fracaso conteo Nidos",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.86,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -194,7 +242,15 @@ var poligonosRPAs = {
                 "fecha": "30/04/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Seguimiento reproduccion colonia flamencos. Maxima ocupacion",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.86,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -251,7 +307,15 @@ var poligonosRPAs = {
                 "fecha": "30/04/2024",
                 "localidad": "Isla de Senra. Laguna de Fuente de Piedra",
                 "descripcion": "Seguimiento reproduccion colonia flamencos. Maxima ocupacion",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.86,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -268,7 +332,15 @@ var poligonosRPAs = {
                 "fecha": "01/02/2024",
                 "localidad": "Embalse Cordobilla. Garcera",
                 "descripcion": "Seguimiento Garcera embalse.",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 80.0,
+                "gsd": 2.15,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -313,7 +385,15 @@ var poligonosRPAs = {
                 "fecha": "01/02/2024",
                 "localidad": "Embalse Cordobilla. Garcera",
                 "descripcion": "Seguimiento Garcera embalse.",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 80.0,
+                "gsd": 2.15,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -330,7 +410,15 @@ var poligonosRPAs = {
                 "fecha": "21/05/2024",
                 "localidad": "Embalse D. Melendo. Garcera",
                 "descripcion": "Seguimiento Garcera embalse D. Melendo",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 80.0,
+                "gsd": 2.15,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -367,7 +455,15 @@ var poligonosRPAs = {
                 "fecha": "21/05/2024",
                 "localidad": "Embalse D. Melendo. Garcera",
                 "descripcion": "Seguimiento Garcera embalse D. Melendo",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 80.0,
+                "gsd": 2.15,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -384,7 +480,15 @@ var poligonosRPAs = {
                 "fecha": "15/05/2024",
                 "localidad": "Pantano de los Palacios. Garceras y moritos",
                 "descripcion": "Seguimiento de colonia garcera",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 90.0,
+                "gsd": 2.42,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -429,7 +533,15 @@ var poligonosRPAs = {
                 "fecha": "15/05/2024",
                 "localidad": "Pantano de los Palacios. Garceras y moritos",
                 "descripcion": "Seguimiento de colonia garcera",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 90.0,
+                "gsd": 2.42,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -446,7 +558,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 02",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 2",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.69,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -483,7 +603,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 02",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 2",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.69,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -500,7 +628,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 01",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 1",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.96,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -537,7 +673,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina Industria. Bahia de Cadiz. Nucleo 01",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas Nucleo 1",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 100.0,
+                "gsd": 2.96,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",
@@ -554,7 +698,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina El vicario. Bahia de C\u00e1diz",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 110.0,
+                "gsd": 2.96,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Polygon",
@@ -595,7 +747,15 @@ var poligonosRPAs = {
                 "fecha": "12/04/2024",
                 "localidad": "Salina El vicario. Bahia de C\u00e1diz",
                 "descripcion": "Seguimiento reproducci\u00f3n colonia Espatulas",
-                "operador": "AMAYA"
+                "operador": "AMAYA",
+                "departamento": "IDi",
+                "tipo_vuelo": "Fotogrametrico",
+                "piloto": "Jesus Chaves",
+                "aeronave": "DJI M3E",
+                "sensor": "RGB",
+                "altura": 110.0,
+                "gsd": 2.96,
+                "contacto": "jesus.chaves.posadillo@juntadeandalucia.es"
             },
             "geometry": {
                 "type": "Point",

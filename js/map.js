@@ -44,7 +44,15 @@ var pointsLayer = L.geoJSON(poligonosRPAs, {
                             <b>Fecha:</b> ${props.fecha || "No disponible"}<br>
                             <b>Localidad:</b> ${props.localidad || "No disponible"}<br>
                             <b>Descripción:</b> ${props.descripcion || "No disponible"}<br>
-                            <b>Operador:</b> ${props.operador || "No disponible"}`;
+                            <b>Operador:</b> ${props.operador || "No disponible"}<br>
+                            <b>Departamento:</b> ${props.departamento || "No disponible"}<br>
+                            <b>Tipo de vuelo:</b> ${props.tipo_vuelo || "No disponible"}<br>
+                            <b>Piloto:</b> ${props.piloto || "No disponible"}<br>
+                            <b>Aeronave:</b> ${props.aeronave || "No disponible"}<br>
+                            <b>Sensor:</b> ${props.sensor || "No disponible"}<br>
+                            <b>Altura (m):</b> ${props.altura || "No disponible"}<br>
+                            <b>GSD (cm/px):</b> ${props.gsd || "No disponible"}<br>
+                            <b>Contacto:</b> ${props.contacto || "No disponible"}`;
         layer.bindPopup(popupContent);
     }
 }).addTo(map);
