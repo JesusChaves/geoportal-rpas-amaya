@@ -1,0 +1,32 @@
+name: Actualizar GeoJSON desde Google Sheets
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Ejecutar cada día a medianoche (UTC)
+  workflow_dispatch:
+
+jobs:
+  update-geojson:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependencias
+        run: pip install pandas shapely requests
+
+      - name: Ejecutar script de actualización
+        run: python update_geojson.py
+
+      - name: Confirmar cambios y subir a GitHub
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add Poligonos_RPAs_AMAYA.js
+          git commit -m 'Actualizar GeoJSON desde Google Sheets' || echo 'No hay cambios para subir'
+          git push
