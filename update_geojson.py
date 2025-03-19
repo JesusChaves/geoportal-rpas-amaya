@@ -21,7 +21,7 @@ def convert_to_geojson(df):
     for _, row in df.iterrows():
         try:
             # Convertir el polígono desde WKT a GeoJSON
-            polygon_geojson = wkt.loads(row["POLIGONO"])
+            polygon_geojson = wkt.loads(row["COORDENADAS POLIGONO"])
             
             # Convertir la URL de Google Drive en un enlace visible en la web
             image_url = row["IMAGEN ORTOMOSAICO"] if pd.notna(row["IMAGEN ORTOMOSAICO"]) else ""
