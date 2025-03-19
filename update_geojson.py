@@ -25,9 +25,13 @@ def convert_to_geojson(df):
             
             # Convertir la URL de Google Drive en un enlace visible en la web
             image_url = row["IMAGEN ORTOMOSAICO"] if pd.notna(row["IMAGEN ORTOMOSAICO"]) else ""
-            if "drive.google.com" in image_url:
-                image_id = image_url.split("/d/")[1].split("/")[0]
-                image_url = f"https://drive.google.com/uc?id={image_id}"
+            if "drive.google.com" in image_url and "/d/" in image_url:
+                try:
+                    image_id = image_url.split("/d/")[1].split("/")[0]
+                    image_url = f"https://drive.google.com/uc?id={image_id}"
+                except IndexError:
+                    print(f"⚠️ Error procesando la imagen para {row['NOMBRE DE LA MISION']}: URL incorrecta")
+                    image_url = ""  # Deja la imagen en blanco si hay error
             
             # Crear entidad de polígono
             polygon_feature = {
