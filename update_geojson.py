@@ -80,7 +80,7 @@ def save_geojson(geojson_data, output_file):
 
 if __name__ == "__main__":
     SHEET_URL = "https://docs.google.com/spreadsheets/d/1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw/edit?usp=sharing"
-    OUTPUT_FILE = "Poligonos_RPAs_AMAYA.js"
+    OUTPUT_FILE = "js/Poligonos_RPAs_AMAYA.js"
 
     df = download_google_sheet(SHEET_URL)
     geojson_data = convert_to_geojson(df)
