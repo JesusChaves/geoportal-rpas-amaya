@@ -30,4 +30,3 @@ jobs:
           git add Poligonos_RPAs_AMAYA.js
           git commit -m 'Actualizar GeoJSON desde Google Sheets' || echo 'No hay cambios para subir'
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-
