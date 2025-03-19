@@ -9,7 +9,8 @@ def download_google_sheet(sheet_url):
     sheet_csv_url = sheet_url.replace("/edit?usp=sharing", "/gviz/tq?tqx=out:csv")
     response = requests.get(sheet_csv_url)
     if response.status_code == 200:
-        return pd.read_csv(pd.compat.StringIO(response.text))
+import io  # Agrega esta línea al inicio del script
+return pd.read_csv(io.StringIO(response.text))
     else:
         raise Exception("Error al descargar la hoja de cálculo")
 
