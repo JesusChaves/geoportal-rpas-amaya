@@ -20,6 +20,9 @@ jobs:
       - name: Instalar dependencias
         run: pip install pandas shapely requests
 
+      - name: Listar archivos en el directorio
+        run: ls -R
+
       - name: Ejecutar script de actualización
         run: python update_geojson.py
 
