@@ -2,17 +2,17 @@ import pandas as pd
 import json
 import requests
 from shapely import wkt
-import os
+import io  # ✅ Mueve esto al inicio del script
 
 def download_google_sheet(sheet_url):
     """Descarga datos desde Google Sheets en formato CSV"""
     sheet_csv_url = sheet_url.replace("/edit?usp=sharing", "/gviz/tq?tqx=out:csv")
     response = requests.get(sheet_csv_url)
+    
     if response.status_code == 200:
-import io  # Agrega esta línea al inicio del script
-return pd.read_csv(io.StringIO(response.text))
+        return pd.read_csv(io.StringIO(response.text))  # ✅ Indentación corregida
     else:
-        raise Exception("Error al descargar la hoja de cálculo")
+        raise Exception("Error al descargar la hoja de cálculo")  # ✅ Indentación corregida
 
 def convert_to_geojson(df):
     """Convierte los datos de la tabla a GeoJSON"""
