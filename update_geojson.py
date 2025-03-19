@@ -17,38 +17,36 @@ def convert_to_geojson(df):
     """Convierte los datos de la tabla a GeoJSON"""
     geojson_data = {"type": "FeatureCollection", "features": []}
 
-    for _, row in df.iterrows():
-        try:
-            # Convertir el polígono desde WKT a GeoJSON
-            polygon_geojson = wkt.loads(row["POLIGONO"])
+for _, row in df.iterrows():
+    try:
+        polygon_geojson = wkt.loads(row["POLIGONO"])
 
-            # Convertir la URL de Google Drive en un enlace visible en la web
-            image_url = row["IMAGEN ORTOMOSAICO"] if pd.notna(row["IMAGEN ORTOMOSAICO"]) else ""
-            if "drive.google.com" in image_url:
-                image_id = image_url.split("/d/")[1].split("/")[0]
-                image_url = f"https://drive.google.com/uc?id={image_id}"
-
-            # Crear entidad de polígono
-            polygon_feature = {
-                "type": "Feature",
-                "properties": {
-                    "mision": row["NOMBRE DE LA MISION"],
-                    "fecha": row["FECHA"],
-                    "localidad": row["LOCALIDAD"],
-                    "descripcion": row["DESCRIPCION"],
-                    "operador": row["OPERADOR UAS"],
-                    "departamento": row["DEPARTAMENTO"],
-                    "tipo_vuelo": row["TIPO DE VUELO"],
-                    "piloto": row["PILOTO"],
-                    "aeronave": row["DRONE"],
-                    "sensor": row["SENSOR"],
-                    "altura": row["ALTURA DE VUELO (m)"],
-                    "gsd": row["GSD (cm/px)"],
-                    "contacto": row["CONTACTO"],
-                    "imagen": image_url
-                },
-                "geometry": json.loads(json.dumps(polygon_geojson.__geo_interface__))
+        point_feature = {
+            "type": "Feature",
+            "properties": {
+                "mision": row["NOMBRE DE LA MISION"],
+                "fecha": row["FECHA"],
+                "localidad": row["LOCALIDAD"],
+                "descripcion": row["DESCRIPCION"],
+                "operador": row["OPERADOR UAS"],
+                "departamento": row["DEPARTAMENTO"],
+                "tipo_vuelo": row["TIPO DE VUELO"],
+                "piloto": row["PILOTO"],
+                "aeronave": row["DRONE"],
+                "sensor": row["SENSOR"],
+                "altura": row["ALTURA DE VUELO (m)"],
+                "gsd": row["GSD (cm/px)"],
+                "contacto": row["CONTACTO"],
+                "imagen": row["IMAGEN ORTOMOSAICO"]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [row["LONGITUD"], row["LATITUD"]]
             }
+        }
+
+    except Exception as e:
+        print(f"Error procesando fila {row['NOMBRE DE LA MISION']}: {e}")
 
             # Crear entidad de punto central
 point_feature = {
