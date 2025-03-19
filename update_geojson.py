@@ -56,4 +56,4 @@ def convert_to_geojson(df):
                 "properties": polygon_feature["properties"],
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [row["LONGITUD"], row["LATITUD
+                    "coordinates": [row["LONGITUD"], row["LATITUD"]]
