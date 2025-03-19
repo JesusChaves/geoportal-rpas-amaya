@@ -51,9 +51,11 @@ def convert_to_geojson(df):
             }
 
             # Crear entidad de punto central
-            point_feature = {
-                "type": "Feature",
-                "properties": polygon_feature["properties"],
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [row["LONGITUD"], row["LATITUD"]]
+point_feature = {
+    "type": "Feature",
+    "properties": polygon_feature["properties"],
+    "geometry": {
+        "type": "Point",
+        "coordinates": [row["LONGITUD"], row["LATITUD"]]
+    }
+}
