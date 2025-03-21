@@ -1,19 +1,20 @@
 import pandas as pd
 import requests
 import json
+import io  # <-- Este es el cambio importante
 from shapely import wkt
 
-# URL de la hoja de cálculo de Google Sheets
+# URL de la hoja de cálculo de Google Sheets (convertida a CSV)
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw/export?format=csv"
 
-# Archivo de salida (ahora en la carpeta 'js/')
+# Archivo de salida en la carpeta correcta
 OUTPUT_FILE = "js/Poligonos_RPAs_AMAYA.js"
 
 def download_google_sheet(sheet_url):
     """Descarga datos desde Google Sheets en formato CSV"""
     response = requests.get(sheet_url)
     if response.status_code == 200:
-        return pd.read_csv(pd.compat.StringIO(response.text))
+        return pd.read_csv(io.StringIO(response.text))  # <-- Corrección aquí
     else:
         raise Exception("Error al descargar la hoja de cálculo")
 
@@ -79,4 +80,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
