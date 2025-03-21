@@ -24,6 +24,8 @@ def convert_to_geojson(df):
 
     for _, row in df.iterrows():
         try:
+            print(f"Procesando fila: {row['NOMBRE DE LA MISION']}")  # <-- Depuración
+
             # Convertir el polígono desde WKT a GeoJSON
             polygon_geojson = wkt.loads(row["COORDENADAS POLIGONO"])
 
@@ -81,3 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
