@@ -3,6 +3,7 @@ import requests
 import geopandas as gpd
 import shapely.wkt
 import shapely.geometry
+from io import StringIO  # Corrección para el uso de StringIO
 
 # URL de la hoja de Google Sheets en formato CSV
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw/gviz/tq?tqx=out:csv"
@@ -12,7 +13,7 @@ def download_google_sheet(sheet_url):
     response = requests.get(sheet_url)
     
     if response.status_code == 200:
-        return pd.read_csv(pd.compat.StringIO(response.text))
+        return pd.read_csv(StringIO(response.text))  # Uso correcto de StringIO
     else:
         raise Exception(f"❌ Error al descargar la hoja de cálculo: {response.status_code}")
 
@@ -92,3 +93,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
