@@ -67,6 +67,7 @@ def convert_to_geojson(df):
 
 def save_geojson(geojson_data, output_file):
     """Guarda los datos en un archivo JS en la carpeta js/"""
+    print(f"Guardando archivo en {output_file}")  # <-- Línea nueva para depuración
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("var Poligonos_RPAs_AMAYA = ")
         json.dump(geojson_data, f, indent=4, ensure_ascii=False)

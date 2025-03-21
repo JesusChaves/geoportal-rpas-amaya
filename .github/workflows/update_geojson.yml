@@ -31,6 +31,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add Poligonos_RPAs_AMAYA.js
+          git add js/Poligonos_RPAs_AMAYA.js
           git commit -m 'Actualizar GeoJSON desde Google Sheets' || echo 'No hay cambios para subir'
           git push
