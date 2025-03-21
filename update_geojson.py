@@ -49,9 +49,39 @@ def convert_to_geojson(df):
                     "altura": row["ALTURA"],
                     "gsd": row["GSD"],
                     "contacto": row["CONTACTO"],
-                    "imagen": image_url,
+                    "imagen": image_url
                 },
                 "geometry": {
                     "type": "Polygon",
-                    "coordinates
+                    "coordinates": [list(polygon_geojson.exterior.coords)]
+                }
+            }
 
+            geojson_data["features"].append(polygon_feature)
+
+        except Exception as e:
+            print(f"❌ Error procesando fila {row['NOMBRE DE LA MISION']}: {e}")
+
+    return geojson_data
+
+def save_geojson(data, output_file="js/Poligonos_RPAs_AMAYA.js"):
+    """Guarda los datos en un archivo .js dentro de la carpeta js/"""
+    geojson_str = json.dumps(data, indent=4, ensure_ascii=False)
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(f"const Poligonos_RPAs_AMAYA = {geojson_str};\n")
+
+def main():
+    print("📥 Descargando datos desde Google Sheets...")
+    df = download_google_sheet(SHEET_URL)
+
+    print("🔄 Convirtiendo datos a GeoJSON...")
+    geojson_data = convert_to_geojson(df)
+
+    print("💾 Guardando archivo en js/Poligonos_RPAs_AMAYA.js")
+    save_geojson(geojson_data)
+
+    print("✅ Archivo actualizado correctamente.")
+
+if __name__ == "__main__":
+    main()
