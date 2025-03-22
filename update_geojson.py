@@ -77,7 +77,8 @@ def convert_to_geojson(df):
 def save_geojson(data, output_path="js/Poligonos_RPAs_AMAYA.js"):
     """Guarda el GeoJSON en un archivo JS"""
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write(f"const Poligonos_RPAs_AMAYA = {data};")
+        f.write(f"const Poligonos_RPAs_AMAYA = {data};\n")  # Línea en blanco para forzar cambios
+
 
 def main():
     print("📥 Descargando datos desde Google Sheets...")
