@@ -26,7 +26,7 @@ jobs:
       - name: Ejecutar script de actualización
         run: python update_geojson.py
 
-        - name: Confirmar cambios y subir a GitHub
+      - name: Confirmar cambios y subir a GitHub
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
