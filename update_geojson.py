@@ -4,18 +4,16 @@ import json
 import requests
 from shapely import wkt
 from pathlib import Path
+from io import StringIO  # ✅ Solución definitiva para el error StringIO
 
-# URL del Google Sheet exportado como CSV
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw/export?format=csv"
-
-# Ruta donde se guardará el archivo JS
 OUTPUT_FILE = Path("js/Poligonos_RPAs_AMAYA.js")
 
 def download_google_sheet(url):
     print("📥 Descargando datos desde Google Sheets...")
     response = requests.get(url)
     response.raise_for_status()
-    return pd.read_csv(pd.compat.StringIO(response.text))
+    return pd.read_csv(StringIO(response.text))  # ✅ Cambio aquí
 
 def validate_image_url(url):
     if not isinstance(url, str) or "drive.google.com" not in url or "id=" not in url:
@@ -79,4 +77,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
