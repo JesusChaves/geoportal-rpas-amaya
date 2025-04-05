@@ -1,7 +1,7 @@
 // Poligonos_RPAs_AMAYA.js
 
 // Carga el GeoJSON directamente desde la raíz del proyecto
-fetch('Poligonos_RPAS.geojson')
+fetch('Poligonos_RPAS.json')
   .then(response => response.json())
   .then(data => {
     L.geoJSON(data, {
