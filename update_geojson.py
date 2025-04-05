@@ -12,7 +12,7 @@ df = pd.read_csv(CSV_URL)
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
-    coords = json.loads(row['GeoJSON'])  # Suponiendo que tienes una columna llamada GeoJSON con la geometría
+    coords = json.loads(row['COORDENADAS POLIGONO'])  # Suponiendo que tienes una columna llamada GeoJSON con la geometría
     properties = {
         "Nombre": row['Nombre de la misión'],
         "Fecha": row['Fecha'],
