@@ -1,10 +1,9 @@
 // Poligonos_RPAs_AMAYA.js
 
-// Carga dinámicamente el archivo GeoJSON generado
-fetch('../Poligonos_RPAS.geojson')
+// Carga el GeoJSON directamente desde la raíz del proyecto
+fetch('Poligonos_RPAS.geojson')
   .then(response => response.json())
   .then(data => {
-    // Agrega los polígonos y puntos al mapa
     L.geoJSON(data, {
       onEachFeature: function(feature, layer) {
         var contenidoPopup = `
@@ -26,7 +25,7 @@ fetch('../Poligonos_RPAS.geojson')
             </div>
             <div>
               <a href="${feature.properties.Imagen}" target="_blank">
-                <img src="${feature.properties.Imagen}" style="width:120px; height:auto;"/>
+                <img src="${feature.properties.Imagen}" style="width:120px; height:auto;" />
               </a>
             </div>
           </div>`;
@@ -48,7 +47,7 @@ fetch('../Poligonos_RPAS.geojson')
           fillOpacity: 0.9
         });
       }
-    }).addTo(mapa);
+    }).addTo(mapa); // Usa la variable global "mapa" creada en map.js
   })
   .catch(error => {
     console.error('Error al cargar el GeoJSON:', error);
