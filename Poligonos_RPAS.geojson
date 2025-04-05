@@ -1,0 +1,159 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.178912,
+              36.458914
+            ],
+            [
+              -6.180735,
+              36.456671
+            ],
+            [
+              -6.178376,
+              36.454979
+            ],
+            [
+              -6.175674,
+              36.454272
+            ],
+            [
+              -6.173829,
+              36.456705
+            ],
+            [
+              -6.178912,
+              36.458914
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20240412_Vicario_PLALEU",
+        "Fecha": "12/4/2024",
+        "Localidad": "Salina El vicario. Bahia de Cadiz",
+        "Descripcion": "Seguimiento reproducción colonia Espatulas\n",
+        "Taxon": "Espatula comun (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 110,
+        "GSD": 2.96,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=19qG2slGYJPiT2aUXG_DuWRCy4J1eOoto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.718217,
+              37.356377
+            ],
+            [
+              -4.715515,
+              37.356275
+            ],
+            [
+              -4.715171,
+              37.35856
+            ],
+            [
+              -4.719246,
+              37.360436
+            ],
+            [
+              -4.723278,
+              37.3574
+            ],
+            [
+              -4.721906,
+              37.356377
+            ],
+            [
+              -4.718217,
+              37.356377
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "OJO_Piojo_CORDOBILLA",
+        "Fecha": "1/2/2024",
+        "Localidad": "Embalse Cordobilla",
+        "Descripcion": "Visita con delegado por el dia de los humedales",
+        "Taxon": "Cormoranes",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 80,
+        "GSD": 2.15,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=13Uwxi_C39DQwQ4psdlZ4vqn9Ob3GDEum"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.766374,
+              37.109391
+            ],
+            [
+              -4.769334,
+              37.109596
+            ],
+            [
+              -4.77236,
+              37.105506
+            ],
+            [
+              -4.770064,
+              37.104719
+            ],
+            [
+              -4.767296,
+              37.106328
+            ],
+            [
+              -4.766374,
+              37.109391
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20241028_FdP_PHOROS_Senra",
+        "Fecha": "28/10/2024",
+        "Localidad": "AL LORO Isla de Senra. Laguna de Fuente de Piedra",
+        "Descripcion": "Fin obra restauracion Isla de Senra",
+        "Taxon": "Flamenco comun",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 35,
+        "GSD": 0.95,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1k8KD1uBii_-JQxu0EQWIEiTsNOd9LKo5"
+      }
+    }
+  ]
+}
