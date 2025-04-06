@@ -1,53 +1,48 @@
 // Poligonos_RPAs_AMAYA.js
 
-// Carga el GeoJSON directamente desde la raíz del proyecto
 fetch('Poligonos_RPAS.json')
   .then(response => response.json())
   .then(data => {
     L.geoJSON(data, {
       onEachFeature: function(feature, layer) {
-        var contenidoPopup = `
-          <div style="display:flex;">
-            <div style="padding-right:10px;">
-              <b>Nombre:</b> ${feature.properties.Nombre}<br>
-              <b>Fecha:</b> ${feature.properties.Fecha}<br>
-              <b>Localidad:</b> ${feature.properties.Localidad}<br>
-              <b>Descripción:</b> ${feature.properties.Descripcion}<br>
-              <b>Taxón:</b> ${feature.properties.Taxon}<br>
-              <b>Departamento:</b> ${feature.properties.Departamento}<br>
-              <b>Tipo de Vuelo:</b> ${feature.properties.Tipo_Vuelo}<br>
-              <b>Piloto:</b> ${feature.properties.Piloto}<br>
-              <b>Dron:</b> ${feature.properties.Dron}<br>
-              <b>Sensor:</b> ${feature.properties.Sensor}<br>
-              <b>Altura Vuelo:</b> ${feature.properties.Altura_Vuelo} m<br>
-              <b>GSD:</b> ${feature.properties.GSD} cm/px<br>
-              <b>Contacto:</b> ${feature.properties.Contacto}
-            </div>
+        let props = feature.properties;
+        let popup = `
+          <div style="display:flex; flex-wrap: wrap;">
+            <div style="min-width: 240px; padding-right:10px;">
+              <b>Nombre:</b> ${props.Nombre}<br>
+              <b>Fecha:</b> ${props.Fecha}<br>
+              <b>Localidad:</b> ${props.Localidad}<br>
+              <b>Descripción:</b> ${props.Descripcion}<br>
+              <b>Taxón:</b> ${props.Taxon}<br>
+              <b>Departamento:</b> ${props.Departamento}<br>
+              <b>Tipo de Vuelo:</b> ${props.Tipo_Vuelo}<br>
+              <b>Piloto:</b> ${props.Piloto}<br>
+              <b>Dron:</b> ${props.Dron}<br>
+              <b>Sensor:</b> ${props.Sensor}<br>
+              <b>Altura Vuelo:</b> ${props.Altura_Vuelo} m<br>
+              <b>GSD:</b> ${props.GSD} cm/px<br>
+              <b>Contacto:</b> ${props.Contacto}
+            </div>`;
+
+        if (props.Imagen && props.Imagen.startsWith('http')) {
+          popup += `
             <div>
-              <a href="${feature.properties.Imagen}" target="_blank">
-                <img src="${feature.properties.Imagen}" style="width:120px; height:auto;" />
+              <a href="${props.Imagen}" target="_blank" title="Ver imagen grande">
+                <img src="${props.Imagen}" style="width:120px; height:auto; border-radius: 4px; box-shadow: 0 0 6px #aaa;" />
               </a>
-            </div>
-          </div>`;
-        layer.bindPopup(contenidoPopup);
+            </div>`;
+        }
+
+        popup += `</div>`;
+        layer.bindPopup(popup);
       },
       style: {
         color: "#0078FF",
         weight: 2,
         fillColor: "#0078FF",
         fillOpacity: 0.2
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {
-          radius: 6,
-          fillColor: "#FF0000",
-          color: "#FFFFFF",
-          weight: 1,
-          opacity: 1,
-          fillOpacity: 0.9
-        });
       }
-    }).addTo(mapa); // Usa la variable global "mapa" creada en map.js
+    }).addTo(mapa);
   })
   .catch(error => {
     console.error('Error al cargar el GeoJSON:', error);
