@@ -3,7 +3,7 @@ name: Actualizar GeoJSON diario
 on:
   schedule:
     - cron: '0 6 * * *' # Todos los días a las 6:00 am
-  workflow_dispatch: # Ejecutar manualmente si quieres
+  workflow_dispatch: # Permite ejecutarlo manualmente
 
 jobs:
   build:
@@ -26,6 +26,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
-          git add Poligonos_RPAS.geojson
-          git commit -m "Actualización automática del GeoJSON" || echo "Sin cambios"
+          git add Poligonos_RPAS.json
+          git commit -m "Actualización automática del GeoJSON (.json)" || echo "Sin cambios"
           git push
