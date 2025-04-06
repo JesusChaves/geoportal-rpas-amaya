@@ -18,39 +18,39 @@ fetch('Poligonos_RPAS.json')
         const props = feature.properties;
         const colorRelleno = coloresRelleno[props.Departamento] || "#00B0F0";
 
-        // Punto definido por el usuario desde el Sheet
-        const lat = parseFloat(props.LATITUD);
-        const lng = parseFloat(props.LONGITUD);
-        if (!isNaN(lat) && !isNaN(lng)) {
-          let popup = `
-            <div style="display:flex; flex-wrap:wrap;">
-              <div style="min-width:240px; padding-right:10px;">
-                <b>Nombre:</b> ${props.Nombre}<br>
-                <b>Fecha:</b> ${props.Fecha}<br>
-                <b>Localidad:</b> ${props.Localidad}<br>
-                <b>Descripción:</b> ${props.Descripcion}<br>
-                <b>Taxón:</b> ${props.Taxon}<br>
-                <b>Departamento:</b> ${props.Departamento}<br>
-                <b>Tipo de Vuelo:</b> ${props.Tipo_Vuelo}<br>
-                <b>Piloto:</b> ${props.Piloto}<br>
-                <b>Dron:</b> ${props.Dron}<br>
-                <b>Sensor:</b> ${props.Sensor}<br>
-                <b>Altura Vuelo:</b> ${props.Altura_Vuelo} m<br>
-                <b>GSD:</b> ${props.GSD} cm/px<br>
-                <b>Contacto:</b> ${props.Contacto}
-              </div>`;
+        let popup = `
+          <div style="display:flex; flex-wrap:wrap;">
+            <div style="min-width:240px; padding-right:10px;">
+              <b>Nombre:</b> ${props.Nombre}<br>
+              <b>Fecha:</b> ${props.Fecha}<br>
+              <b>Localidad:</b> ${props.Localidad}<br>
+              <b>Descripción:</b> ${props.Descripcion}<br>
+              <b>Taxón:</b> ${props.Taxon}<br>
+              <b>Departamento:</b> ${props.Departamento}<br>
+              <b>Tipo de Vuelo:</b> ${props.Tipo_Vuelo}<br>
+              <b>Piloto:</b> ${props.Piloto}<br>
+              <b>Dron:</b> ${props.Dron}<br>
+              <b>Sensor:</b> ${props.Sensor}<br>
+              <b>Altura Vuelo:</b> ${props.Altura_Vuelo} m<br>
+              <b>GSD:</b> ${props.GSD} cm/px<br>
+              <b>Contacto:</b> ${props.Contacto}
+            </div>`;
 
-          // Miniatura y popup modal si imagen válida
-          if (props.Imagen && props.Imagen.startsWith("http") && props.Imagen.includes("googleusercontent.com")) {
-            popup += `
-              <div>
-                <img src="${props.Imagen}" style="width:120px; cursor:pointer; border-radius:6px;" onclick="abrirImagen('${props.Imagen}')" />
-              </div>`;
-          }
+        // Miniatura + modal
+        if (props.Imagen && props.Imagen.startsWith("http")) {
+          popup += `
+            <div>
+              <img src="${props.Imagen}" style="width:120px; cursor:pointer; border-radius:6px;" onclick="abrirImagen('${props.Imagen}')" onerror="this.style.display='none'"/>
+            </div>`;
+        }
 
-          popup += `</div>`;
-
-          L.circleMarker([lat, lng], {
+        popup += `</div>`;
+        // Vincula popup al centroide
+        if (feature.geometry.type === "Polygon") {
+          const coords = feature.geometry.coordinates[0];
+          const center = coords.reduce((acc, curr) => [acc[0] + curr[0], acc[1] + curr[1]], [0, 0])
+            .map(x => x / coords.length);
+          L.circleMarker([center[1], center[0]], {
             radius: 5,
             fillColor: colorRelleno,
             color: "#FF0000",
