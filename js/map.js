@@ -1,25 +1,25 @@
 // map.js
 
-// Crea el mapa centrado en Andalucía
-var mapa = L.map('map').setView([37.5, -5.8], 8);
-
-// Capa base OpenStreetMap
-var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(mapa);
-
-// Capa base Esri World Imagery
-var esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'Tiles &copy; Esri'
+const mapa = L.map('map', {
+  center: [37.5, -4.8], // Centrado en Andalucía
+  zoom: 7,
+  zoomControl: true
 });
 
-// Selector de capas base
-var baseMaps = {
-  "OpenStreetMap": osm,
-  "Esri World Imagery": esri
-};
+// Panel para los puntos (más arriba que los polígonos)
+mapa.createPane("puntosPane");
+mapa.getPane("puntosPane").style.zIndex = 650;
 
-L.control.layers(baseMaps).addTo(mapa);
+// Mapas base
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(mapa);
 
-// Controles de zoom
-L.control.zoom({ position: 'topright' }).addTo(mapa);
+const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles © Esri'
+});
+
+L.control.layers({
+  "Mapa": osm,
+  "Satélite": satelite
+}).addTo(mapa);

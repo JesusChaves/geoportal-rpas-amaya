@@ -18,7 +18,6 @@ fetch('Poligonos_RPAS.json')
         const props = feature.properties;
         const colorRelleno = coloresRelleno[props.Departamento] || "#00B0F0";
 
-        // Crear el contenido del popup
         let popup = `<div style="display:flex; flex-wrap:wrap;">
           <div style="min-width:240px; padding-right:10px;">
             <b>Nombre:</b> ${props.Nombre || '—'}<br>
@@ -58,11 +57,11 @@ fetch('Poligonos_RPAS.json')
             color: "#FF0000",
             weight: 1,
             opacity: 1,
-            fillOpacity: 1
+            fillOpacity: 1,
+            pane: "puntosPane" // Asegura que el punto reciba clics
           })
           .bindPopup(popup)
-          .addTo(mapa)
-          .bringToFront(); // Asegura que quede por encima del polígono
+          .addTo(mapa);
         }
       },
       style: function(feature) {
