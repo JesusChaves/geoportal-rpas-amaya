@@ -204,6 +204,52 @@
         "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
         "Imagen": "https://drive.google.com/open?id=1xlrcq6ldfMyjZvOBciposMwVNTbM7ErI"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.992089,
+              37.22293
+            ],
+            [
+              -6.991638,
+              37.21818
+            ],
+            [
+              -6.99003,
+              37.218761
+            ],
+            [
+              -6.989086,
+              37.222845
+            ],
+            [
+              -6.992089,
+              37.22293
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20240710_Guarderia_Pollos_PHOROS",
+        "Fecha": "10/7/2024",
+        "Localidad": "Isla de la Liebre (Marismas del Odiel)",
+        "Descripcion": "Guarderia pollos flamencos",
+        "Taxon": "Flamenco común (Phoenicopterus roseus)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 80,
+        "GSD": 1.49,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1J6uT5Rf2JWgTUaAUjaYbym9aLfFGH0nd"
+      }
     }
   ]
 }
