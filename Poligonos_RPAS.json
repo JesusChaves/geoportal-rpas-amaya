@@ -250,6 +250,52 @@
         "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
         "Imagen": "https://drive.google.com/open?id=1J6uT5Rf2JWgTUaAUjaYbym9aLfFGH0nd"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.780731,
+              37.917795
+            ],
+            [
+              -4.778758,
+              37.918878
+            ],
+            [
+              -4.785535,
+              37.925378
+            ],
+            [
+              -4.787722,
+              37.924396
+            ],
+            [
+              -4.780731,
+              37.917795
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20240717_CV_Cordoba_Mision_08",
+        "Fecha": "17/7/2024",
+        "Localidad": "Cinturón Verde Córdoba",
+        "Descripcion": "Vuelo previo a la ejecución de la obra del Cinturon Verde de Córdoba, para la UGC.",
+        "Taxon": "Obra",
+        "Departamento": "UGC",
+        "Tipo_Vuelo": "Fotogrametria",
+        "Piloto": "Mar Martínez",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 45,
+        "GSD": 1.21,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1o6dR9PyeQ65IvWSBL6RYd0G1PPvl6DMv"
+      }
     }
   ]
 }
