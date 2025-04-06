@@ -154,6 +154,56 @@
         "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
         "Imagen": "https://drive.google.com/open?id=1k8KD1uBii_-JQxu0EQWIEiTsNOd9LKo5"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.988269,
+              37.220145
+            ],
+            [
+              -6.98844,
+              37.221119
+            ],
+            [
+              -6.991272,
+              37.222025
+            ],
+            [
+              -6.99271,
+              37.219462
+            ],
+            [
+              -6.990157,
+              37.218078
+            ],
+            [
+              -6.988269,
+              37.220145
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20240710_Colonia_PHOROS_vacia",
+        "Fecha": "10/7/2024",
+        "Localidad": "Isla de la Liebre (Marismas del Odiel)",
+        "Descripcion": "Colonia de flamencos vacía tras la reproduccion.",
+        "Taxon": "Flamenco comun (Phoenicopterus roseus)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": "DJI Mavic 3 Enterprise",
+        "Sensor": "RGB",
+        "Altura_Vuelo": 100,
+        "GSD": 1.78,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1xlrcq6ldfMyjZvOBciposMwVNTbM7ErI"
+      }
     }
   ]
 }
