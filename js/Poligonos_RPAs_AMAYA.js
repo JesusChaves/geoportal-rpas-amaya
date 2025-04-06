@@ -1,4 +1,4 @@
-fetch('../Poligonos_RPAS.json')
+fetch('Poligonos_RPAS.json') // ✅ ajustado a ruta local correcta
   .then(response => response.json())
   .then(data => {
     const puntosPane = map.createPane("puntosPane");
@@ -15,7 +15,7 @@ fetch('../Poligonos_RPAS.json')
       "RESTO": "#00B0F0"
     };
 
-    // Añadir polígonos
+    // ✅ AÑADIR POLÍGONOS
     const geojsonLayer = L.geoJSON(data, {
       style: function (feature) {
         const dep = feature.properties.Departamento || "RESTO";
@@ -28,8 +28,10 @@ fetch('../Poligonos_RPAS.json')
       }
     }).addTo(map);
 
-    // Añadir puntos (centroide) + popups
+    // ✅ AÑADIR PUNTOS Y POPUPS
     data.features.forEach(feature => {
+      if (!feature.geometry || feature.geometry.type !== "Polygon") return;
+
       const coords = feature.geometry.coordinates[0];
       const lats = coords.map(c => c[1]);
       const lngs = coords.map(c => c[0]);
@@ -78,12 +80,12 @@ fetch('../Poligonos_RPAS.json')
         fillOpacity: 1,
         pane: "puntosPane"
       })
-      .bindPopup(popupContent)
-      .addTo(map);
+        .bindPopup(popupContent)
+        .addTo(map);
     });
   });
 
-// Función para mostrar imagen ampliada en pantalla
+// ✅ FUNCIÓN PARA ABRIR IMAGEN AMPLIADA
 function abrirImagen(url) {
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
@@ -106,7 +108,6 @@ function abrirImagen(url) {
 
   overlay.appendChild(img);
   document.body.appendChild(overlay);
-
   overlay.addEventListener("click", () => {
     document.body.removeChild(overlay);
   });
