@@ -18,38 +18,40 @@ fetch('Poligonos_RPAS.json')
         const props = feature.properties;
         const colorRelleno = coloresRelleno[props.Departamento] || "#00B0F0";
 
-        let popup = `
-          <div style="display:flex; flex-wrap:wrap;">
-            <div style="min-width:240px; padding-right:10px;">
-              <b>Nombre:</b> ${props.Nombre}<br>
-              <b>Fecha:</b> ${props.Fecha}<br>
-              <b>Localidad:</b> ${props.Localidad}<br>
-              <b>Descripción:</b> ${props.Descripcion}<br>
-              <b>Taxón:</b> ${props.Taxon}<br>
-              <b>Departamento:</b> ${props.Departamento}<br>
-              <b>Tipo de Vuelo:</b> ${props.Tipo_Vuelo}<br>
-              <b>Piloto:</b> ${props.Piloto}<br>
-              <b>Dron:</b> ${props.Dron}<br>
-              <b>Sensor:</b> ${props.Sensor}<br>
-              <b>Altura Vuelo:</b> ${props.Altura_Vuelo} m<br>
-              <b>GSD:</b> ${props.GSD} cm/px<br>
-              <b>Contacto:</b> ${props.Contacto}
-            </div>`;
+        // Crear el contenido del popup
+        let popup = `<div style="display:flex; flex-wrap:wrap;">
+          <div style="min-width:240px; padding-right:10px;">
+            <b>Nombre:</b> ${props.Nombre || '—'}<br>
+            <b>Fecha:</b> ${props.Fecha || '—'}<br>
+            <b>Localidad:</b> ${props.Localidad || '—'}<br>
+            <b>Descripción:</b> ${props.Descripcion || '—'}<br>
+            <b>Taxón:</b> ${props.Taxon || '—'}<br>
+            <b>Departamento:</b> ${props.Departamento || '—'}<br>
+            <b>Tipo de Vuelo:</b> ${props.Tipo_Vuelo || '—'}<br>
+            <b>Piloto:</b> ${props.Piloto || '—'}<br>
+            <b>Dron:</b> ${props.Dron || '—'}<br>
+            <b>Sensor:</b> ${props.Sensor || '—'}<br>
+            <b>Altura Vuelo:</b> ${props.Altura_Vuelo || '—'} m<br>
+            <b>GSD:</b> ${props.GSD || '—'} cm/px<br>
+            <b>Contacto:</b> ${props.Contacto || '—'}
+          </div>`;
 
-        // Miniatura + modal
         if (props.Imagen && props.Imagen.startsWith("http")) {
-          popup += `
-            <div>
-              <img src="${props.Imagen}" style="width:120px; cursor:pointer; border-radius:6px;" onclick="abrirImagen('${props.Imagen}')" onerror="this.style.display='none'"/>
-            </div>`;
+          popup += `<div>
+            <img src="${props.Imagen}" 
+                 style="width:120px; cursor:pointer; border-radius:6px;"
+                 onclick="abrirImagen('${props.Imagen}')"
+                 onerror="this.style.display='none'" />
+          </div>`;
         }
 
         popup += `</div>`;
-        // Vincula popup al centroide
+
         if (feature.geometry.type === "Polygon") {
           const coords = feature.geometry.coordinates[0];
           const center = coords.reduce((acc, curr) => [acc[0] + curr[0], acc[1] + curr[1]], [0, 0])
             .map(x => x / coords.length);
+
           L.circleMarker([center[1], center[0]], {
             radius: 5,
             fillColor: colorRelleno,
@@ -57,7 +59,10 @@ fetch('Poligonos_RPAS.json')
             weight: 1,
             opacity: 1,
             fillOpacity: 1
-          }).bindPopup(popup).addTo(mapa);
+          })
+          .bindPopup(popup)
+          .addTo(mapa)
+          .bringToFront(); // Asegura que quede por encima del polígono
         }
       },
       style: function(feature) {
@@ -75,7 +80,6 @@ fetch('Poligonos_RPAS.json')
     console.error('Error al cargar el GeoJSON:', error);
   });
 
-// Visor de imagen ampliada
 function abrirImagen(url) {
   const modal = document.createElement("div");
   modal.id = "visorImagen";
