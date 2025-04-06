@@ -2,69 +2,33 @@ fetch('../Poligonos_RPAS.json')
   .then(response => response.json())
   .then(data => {
     const puntosPane = map.createPane("puntosPane");
-    puntosPane.style.zIndex = 650; // Más alto que los polígonos
+    puntosPane.style.zIndex = 650;
 
-    L.geoJSON(data, {
+    const fillColors = {
+      "Cauces": "#215F9A",
+      "Oficina de Proyectos": "#FFFF00",
+      "Oficina Técnica": "#D86ECC",
+      "Laboratorio Huelva": "#FF0000",
+      "IDI": "#3B7D23",
+      "UGC": "#747474",
+      "OP Sevilla": "#C04F15",
+      "RESTO": "#00B0F0"
+    };
+
+    // Añadir polígonos
+    const geojsonLayer = L.geoJSON(data, {
       style: function (feature) {
-        const departamento = feature.properties.Departamento || "RESTO";
-
-        const fillColors = {
-          "Cauces": "#215F9A",
-          "Oficina de Proyectos": "#FFFF00",
-          "Oficina Técnica": "#D86ECC",
-          "Laboratorio Huelva": "#FF0000",
-          "IDI": "#3B7D23",
-          "UGC": "#747474",
-          "OP Sevilla": "#C04F15",
-          "RESTO": "#00B0F0"
-        };
-
+        const dep = feature.properties.Departamento || "RESTO";
         return {
-          color: "#FF0000", // borde siempre rojo
+          color: "#FF0000",
           weight: 2,
-          fillColor: fillColors[departamento] || fillColors["RESTO"],
+          fillColor: fillColors[dep] || fillColors["RESTO"],
           fillOpacity: 0.2
         };
-      },
-      onEachFeature: function (feature, layer) {
-        // Formatear URL imagen de Google Drive si es necesario
-        let url = feature.properties.Imagen || "";
-        if (url.includes("drive.google.com/open?id=")) {
-          const id = url.split("id=")[1];
-          url = `https://drive.google.com/uc?id=${id}`;
-        }
-
-        let popupContent = `
-          <div style="display:flex; flex-direction:row;">
-            <div style="padding-right:10px;">
-              <b>Nombre:</b> ${feature.properties.Nombre}<br>
-              <b>Fecha:</b> ${feature.properties.Fecha}<br>
-              <b>Localidad:</b> ${feature.properties.Localidad}<br>
-              <b>Descripción:</b> ${feature.properties.Descripcion}<br>
-              <b>Taxón:</b> ${feature.properties.Taxon}<br>
-              <b>Departamento:</b> ${feature.properties.Departamento}<br>
-              <b>Tipo de Vuelo:</b> ${feature.properties.Tipo_Vuelo}<br>
-              <b>Piloto:</b> ${feature.properties.Piloto}<br>
-              <b>Dron:</b> ${feature.properties.Dron}<br>
-              <b>Sensor:</b> ${feature.properties.Sensor}<br>
-              <b>Altura Vuelo:</b> ${feature.properties.Altura_Vuelo} m<br>
-              <b>GSD:</b> ${feature.properties.GSD} cm/px<br>
-              <b>Contacto:</b> ${feature.properties.Contacto}<br>
-            </div>
-            <div>
-              <img src="${url}" style="width:120px; height:auto; cursor:pointer; border:1px solid #ccc;" onclick="abrirImagen('${url}')" />
-            </div>
-          </div>
-        `;
-        layer.bindPopup(popupContent);
-      },
-      pointToLayer: function (feature, latlng) {
-        // No usado aquí
-        return null;
       }
     }).addTo(map);
 
-    // Añadir puntos (centroides)
+    // Añadir puntos (centroide) + popups
     data.features.forEach(feature => {
       const coords = feature.geometry.coordinates[0];
       const lats = coords.map(c => c[1]);
@@ -80,22 +44,24 @@ fetch('../Poligonos_RPAS.json')
         url = `https://drive.google.com/uc?id=${id}`;
       }
 
-      let popupContent = `
+      const p = feature.properties;
+
+      const popupContent = `
         <div style="display:flex; flex-direction:row;">
           <div style="padding-right:10px;">
-            <b>Nombre:</b> ${feature.properties.Nombre}<br>
-            <b>Fecha:</b> ${feature.properties.Fecha}<br>
-            <b>Localidad:</b> ${feature.properties.Localidad}<br>
-            <b>Descripción:</b> ${feature.properties.Descripcion}<br>
-            <b>Taxón:</b> ${feature.properties.Taxon}<br>
-            <b>Departamento:</b> ${feature.properties.Departamento}<br>
-            <b>Tipo de Vuelo:</b> ${feature.properties.Tipo_Vuelo}<br>
-            <b>Piloto:</b> ${feature.properties.Piloto}<br>
-            <b>Dron:</b> ${feature.properties.Dron}<br>
-            <b>Sensor:</b> ${feature.properties.Sensor}<br>
-            <b>Altura Vuelo:</b> ${feature.properties.Altura_Vuelo} m<br>
-            <b>GSD:</b> ${feature.properties.GSD} cm/px<br>
-            <b>Contacto:</b> ${feature.properties.Contacto}<br>
+            <b>Nombre:</b> ${p.Nombre}<br>
+            <b>Fecha:</b> ${p.Fecha}<br>
+            <b>Localidad:</b> ${p.Localidad}<br>
+            <b>Descripción:</b> ${p.Descripcion}<br>
+            <b>Taxón:</b> ${p.Taxon}<br>
+            <b>Departamento:</b> ${p.Departamento}<br>
+            <b>Tipo de Vuelo:</b> ${p.Tipo_Vuelo}<br>
+            <b>Piloto:</b> ${p.Piloto}<br>
+            <b>Dron:</b> ${p.Dron}<br>
+            <b>Sensor:</b> ${p.Sensor}<br>
+            <b>Altura Vuelo:</b> ${p.Altura_Vuelo} m<br>
+            <b>GSD:</b> ${p.GSD} cm/px<br>
+            <b>Contacto:</b> ${p.Contacto}<br>
           </div>
           <div>
             <img src="${url}" style="width:120px; height:auto; cursor:pointer; border:1px solid #ccc;" onclick="abrirImagen('${url}')" />
@@ -117,7 +83,7 @@ fetch('../Poligonos_RPAS.json')
     });
   });
 
-// Modal imagen en pantalla
+// Función para mostrar imagen ampliada en pantalla
 function abrirImagen(url) {
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
