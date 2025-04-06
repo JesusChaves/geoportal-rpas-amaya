@@ -53,8 +53,8 @@ geojson = {
     "features": features
 }
 
-# Guarda el archivo GeoJSON
-with open('Poligonos_RPAS.geojson', 'w', encoding='utf-8') as f:
+# Guarda el archivo GeoJSON como .json (para uso en la web)
+with open('Poligonos_RPAS.json', 'w', encoding='utf-8') as f:
     json.dump(geojson, f, ensure_ascii=False, indent=2)
 
 print("GeoJSON actualizado correctamente.")
