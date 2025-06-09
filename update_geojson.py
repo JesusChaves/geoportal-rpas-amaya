@@ -7,16 +7,18 @@ import io
 from shapely import wkt
 import shapely.geometry
 
-# URL para exportar tu sheet como CSV
-# Permite sobrescribir usando variables de entorno
-SHEET_ID = os.getenv(
+# URL o identificador del Sheet
+# Si la variable de entorno SHEET_ID contiene la URL completa se usa tal cual,
+# de lo contrario se compone la ruta de exportación a CSV.
+SHEET_VALUE = os.getenv(
     "SHEET_ID",
     "1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw",
 )
-CSV_URL = os.getenv(
-    "CSV_URL",
-    f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv",
-)
+
+if SHEET_VALUE.startswith("http"):
+    CSV_URL = SHEET_VALUE
+else:
+    CSV_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_VALUE}/export?format=csv"
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
