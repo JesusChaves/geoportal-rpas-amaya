@@ -2,6 +2,7 @@
 import pandas as pd
 import requests
 import json
+import io
 from shapely import wkt
 import shapely.geometry
 
@@ -43,7 +44,16 @@ def row_to_geojson_feature(row):
 
 def update_geojson():
     """Descarga el CSV de Google Sheets y genera el GeoJSON."""
-    df = pd.read_csv(CSV_URL)
+    try:
+        resp = requests.get(CSV_URL, timeout=10)
+        if resp.status_code != 200:
+            print(f"Error al descargar el CSV: codigo {resp.status_code}")
+            return
+    except requests.RequestException as e:
+        print(f"Error de red al descargar el CSV: {e}")
+        return
+
+    df = pd.read_csv(io.StringIO(resp.text))
 
     # Convierte el DataFrame en GeoJSON FeatureCollection
     features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
