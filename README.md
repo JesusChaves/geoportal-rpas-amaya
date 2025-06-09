@@ -44,7 +44,7 @@ geoportal-rpas-amaya/
 Si tienes preguntas, puedes contactarme en `tuemail@example.com`. 🚀
 
 ## 🧪 Pruebas
-Para ejecutar la suite de tests con **pytest**:
+Antes de ejecutar la suite de tests con **pytest**, ejecuta `./setup.sh` para instalar las dependencias:
 
 ```bash
 ./setup.sh        # instala las dependencias
