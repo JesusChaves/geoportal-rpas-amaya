@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Identificador o URL del Google Sheet utilizado para generar el GeoJSON
       SHEET_ID: ${{ secrets.SHEET_ID }}
     steps:
       - uses: actions/checkout@v4
