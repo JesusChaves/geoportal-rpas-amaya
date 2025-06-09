@@ -21,7 +21,6 @@ geoportal-rpas-amaya/
 │── css/
 │   └── styles.css
 │── js/
-│   ├── leaflet.js
 │   ├── map.js
 │   ├── Poligonos_RPAs_AMAYA.js
 │── images/
@@ -31,6 +30,8 @@ geoportal-rpas-amaya/
 │── README.md
 │── .gitignore
 ```
+
+> **Nota:** Leaflet se carga desde un CDN y no está incluido en la carpeta `js`.
 
 ## 🛠 Tecnologías Utilizadas
 - **HTML5**
