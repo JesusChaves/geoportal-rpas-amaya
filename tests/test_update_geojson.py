@@ -1,5 +1,8 @@
 import pandas as pd
-from update_geojson import row_to_geojson_feature
+from update_geojson import (
+    row_to_geojson_feature,
+    merge_features,
+)
 
 
 def test_row_to_geojson_feature_returns_valid_geojson():
@@ -27,4 +30,20 @@ def test_row_to_geojson_feature_returns_valid_geojson():
     assert feature.get('type') == 'Feature'
     assert 'geometry' in feature
     assert 'properties' in feature
+
+
+def test_merge_features_adds_new_and_skips_existing():
+    existing = [
+        {"type": "Feature", "properties": {"Nombre": "A"}},
+        {"type": "Feature", "properties": {"Nombre": "B"}},
+    ]
+    new = [
+        {"type": "Feature", "properties": {"Nombre": "B"}},
+        {"type": "Feature", "properties": {"Nombre": "C"}},
+    ]
+
+    merged = merge_features(existing, new)
+    nombres = [f["properties"]["Nombre"] for f in merged]
+
+    assert nombres == ["A", "B", "C"]
 

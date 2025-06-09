@@ -7,6 +7,9 @@ import io
 from shapely import wkt
 import shapely.geometry
 
+# Ruta al GeoJSON en disco
+GEOJSON_PATH = "Poligonos_RPAS.json"
+
 # URL o identificador del Sheet.
 # Se obtiene de la variable de entorno ``SHEET_ID`` y se
 # utiliza un valor por defecto si dicha variable no está definida.
@@ -56,8 +59,32 @@ def row_to_geojson_feature(row):
         "properties": properties
     }
 
+
+def load_existing_features(path: str = GEOJSON_PATH):
+    """Carga los features existentes desde un archivo GeoJSON."""
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        return data.get("features", [])
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def merge_features(existing, new):
+    """Combina listas de features evitando duplicados por nombre."""
+    names = {f.get("properties", {}).get("Nombre") for f in existing}
+    merged = list(existing)
+    for feat in new:
+        name = feat.get("properties", {}).get("Nombre")
+        if name not in names:
+            merged.append(feat)
+            names.add(name)
+    return merged
+
 def update_geojson():
-    """Descarga el CSV de Google Sheets y genera el GeoJSON."""
+    """Descarga el CSV de Google Sheets y actualiza el GeoJSON existente."""
     try:
         resp = requests.get(CSV_URL, timeout=TIMEOUT)
         if resp.status_code != 200:
@@ -69,17 +96,20 @@ def update_geojson():
 
     df = pd.read_csv(io.StringIO(resp.text))
 
-    # Convierte el DataFrame en GeoJSON FeatureCollection
-    features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
-    features = [feature for feature in features if feature is not None]
+    # Features nuevos a partir del sheet
+    new_features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
+    new_features = [feature for feature in new_features if feature is not None]
+
+    # Carga los existentes y combínalos
+    existing = load_existing_features(GEOJSON_PATH)
+    merged = merge_features(existing, new_features)
 
     geojson = {
         "type": "FeatureCollection",
-        "features": features
+        "features": merged
     }
 
-    # Guarda el archivo GeoJSON como .json (para uso en la web)
-    with open('Poligonos_RPAS.json', 'w', encoding='utf-8') as f:
+    with open(GEOJSON_PATH, "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
     print("GeoJSON actualizado correctamente.")
