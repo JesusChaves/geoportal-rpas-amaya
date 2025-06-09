@@ -23,7 +23,7 @@ geoportal-rpas-amaya/
 │── js/
 │   ├── leaflet.js
 │   ├── map.js
-│   ├── Poligonos_RPAs_AMAYA.js
+│   ├── Poligonos_RPAS_AMAYA.js
 │── images/
 │   ├── logo_derecha.png
 │   ├── logo_izquierda.png

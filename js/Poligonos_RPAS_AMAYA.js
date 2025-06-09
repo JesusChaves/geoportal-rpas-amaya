@@ -1,4 +1,4 @@
-// Poligonos_RPAs_AMAYA.js
+// Poligonos_RPAS_AMAYA.js
 
 fetch('Poligonos_RPAS.json')
   .then(response => response.json())
