@@ -90,7 +90,7 @@ function abrirImagen(url) {
   modal.innerHTML = `
     <div style="position: relative;">
       <img src="${url}" style="max-width: 90vw; max-height: 90vh; border: 3px solid white; border-radius: 6px;" />
-      <span onclick="document.body.removeChild(visorImagen)" style="
+      <span onclick="document.body.removeChild(document.getElementById('visorImagen'))" style="
         position: absolute; top: -10px; right: -10px; background: white; border-radius: 50%;
         padding: 5px; cursor: pointer; font-weight: bold;">&#10006;</span>
     </div>`;
