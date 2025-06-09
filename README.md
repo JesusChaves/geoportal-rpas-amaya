@@ -50,3 +50,6 @@ Antes de ejecutar la suite de tests con **pytest**, ejecuta `./setup.sh` para in
 ./setup.sh        # instala las dependencias
 pytest
 ```
+
+## 📄 Licencia
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para mas informacion.
