@@ -7,6 +7,9 @@ import io
 from shapely import wkt
 import shapely.geometry
 
+# Tiempo máximo de espera para la descarga del CSV
+TIMEOUT = 10
+
 # URL o identificador del Sheet
 # Si la variable de entorno SHEET_ID contiene la URL completa se usa tal cual,
 # de lo contrario se compone la ruta de exportación a CSV.
@@ -55,9 +58,9 @@ def row_to_geojson_feature(row):
 def update_geojson():
     """Descarga el CSV de Google Sheets y genera el GeoJSON."""
     try:
-        resp = requests.get(CSV_URL, timeout=10)
+        resp = requests.get(CSV_URL, timeout=TIMEOUT)
         if resp.status_code != 200:
-            print(f"Error al descargar el CSV: codigo {resp.status_code}")
+            print(f"Error al descargar el CSV: código HTTP {resp.status_code}")
             return
     except requests.RequestException as e:
         print(f"Error de red al descargar el CSV: {e}")
