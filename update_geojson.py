@@ -1,4 +1,5 @@
 # update_geojson.py
+import os
 import pandas as pd
 import requests
 import json
@@ -6,8 +7,15 @@ from shapely import wkt
 import shapely.geometry
 
 # URL para exportar tu sheet como CSV
-SHEET_ID = '1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw'
-CSV_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
+# Permite sobrescribir usando variables de entorno
+SHEET_ID = os.getenv(
+    "SHEET_ID",
+    "1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw",
+)
+CSV_URL = os.getenv(
+    "CSV_URL",
+    f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv",
+)
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
