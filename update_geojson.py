@@ -9,9 +9,6 @@ import shapely.geometry
 SHEET_ID = '1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw'
 CSV_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
 
-# Lee la información desde el Google Sheet
-df = pd.read_csv(CSV_URL)
-
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
     try:
@@ -44,17 +41,25 @@ def row_to_geojson_feature(row):
         "properties": properties
     }
 
-# Convierte el DataFrame en GeoJSON FeatureCollection
-features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
-features = [feature for feature in features if feature is not None]
+def update_geojson():
+    """Descarga el CSV de Google Sheets y genera el GeoJSON."""
+    df = pd.read_csv(CSV_URL)
 
-geojson = {
-    "type": "FeatureCollection",
-    "features": features
-}
+    # Convierte el DataFrame en GeoJSON FeatureCollection
+    features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
+    features = [feature for feature in features if feature is not None]
 
-# Guarda el archivo GeoJSON como .json (para uso en la web)
-with open('Poligonos_RPAS.json', 'w', encoding='utf-8') as f:
-    json.dump(geojson, f, ensure_ascii=False, indent=2)
+    geojson = {
+        "type": "FeatureCollection",
+        "features": features
+    }
 
-print("GeoJSON actualizado correctamente.")
+    # Guarda el archivo GeoJSON como .json (para uso en la web)
+    with open('Poligonos_RPAS.json', 'w', encoding='utf-8') as f:
+        json.dump(geojson, f, ensure_ascii=False, indent=2)
+
+    print("GeoJSON actualizado correctamente.")
+
+
+if __name__ == "__main__":
+    update_geojson()
