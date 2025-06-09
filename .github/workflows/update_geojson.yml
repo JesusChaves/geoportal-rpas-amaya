@@ -20,6 +20,9 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Ejecutar pruebas
+        run: pytest
+
       - name: Actualizar GeoJSON
         run: python update_geojson.py
 
