@@ -28,6 +28,9 @@ jobs:
       - name: Actualizar GeoJSON
         run: python update_geojson.py
 
+      - name: Sincronizar con la rama remota
+        run: git pull --ff-only
+
       - name: Commit y push cambios
         run: |
           git config --global user.name 'github-actions'
