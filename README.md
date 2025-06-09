@@ -47,6 +47,6 @@ Si tienes preguntas, puedes contactarme en `tuemail@example.com`. 🚀
 Para ejecutar la suite de tests con **pytest**:
 
 ```bash
-pip install -r requirements.txt  # instala las dependencias
+./setup.sh        # instala las dependencias
 pytest
 ```
