@@ -21,6 +21,9 @@ CSV_URL = (
     else f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
 )
 
+# Tiempo máximo de espera para la descarga del CSV (en segundos)
+TIMEOUT = 10
+
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
     try:
@@ -56,9 +59,9 @@ def row_to_geojson_feature(row):
 def update_geojson():
     """Descarga el CSV de Google Sheets y genera el GeoJSON."""
     try:
-        resp = requests.get(CSV_URL, timeout=10)
+        resp = requests.get(CSV_URL, timeout=TIMEOUT)
         if resp.status_code != 200:
-            print(f"Error al descargar el CSV: codigo {resp.status_code}")
+            print(f"Error al descargar el CSV: código HTTP {resp.status_code}")
             return
     except requests.RequestException as e:
         print(f"Error de red al descargar el CSV: {e}")
