@@ -1,5 +1,1 @@
-geopandas
-shapely
-pandas
-requests
 pytest
