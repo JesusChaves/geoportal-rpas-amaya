@@ -296,6 +296,652 @@
         "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
         "Imagen": "https://drive.google.com/open?id=1o6dR9PyeQ65IvWSBL6RYd0G1PPvl6DMv"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.204829,
+              36.423803
+            ],
+            [
+              -6.203113,
+              36.423527
+            ],
+            [
+              -6.195302,
+              36.425703
+            ],
+            [
+              -6.195431,
+              36.429915
+            ],
+            [
+              -6.199851,
+              36.430157
+            ],
+            [
+              -6.204829,
+              36.423803
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20240412_Industria_PLALEU",
+        "Fecha": "12/4/2024",
+        "Localidad": "Salina Industria. Dos nucleos. Bahia de Cadiz",
+        "Descripcion": "Seguimiento reproducción colonia Espatulas\n",
+        "Taxon": "Espatula comun (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "-",
+        "GSD": "-",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.761715,
+              37.108621
+            ],
+            [
+              -4.768796,
+              37.109716
+            ],
+            [
+              -4.772058,
+              37.105335
+            ],
+            [
+              -4.762917,
+              37.10578
+            ],
+            [
+              -4.761715,
+              37.108621
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250506_FdP_PHOROS_Senra",
+        "Fecha": "6/5/2025",
+        "Localidad": "Isla de Senra y Salina. Laguna de Fuente de Piedra.",
+        "Descripcion": "Vuelo de máxima ocupación",
+        "Taxon": "Flamenco comun",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "-",
+        "GSD": "-",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1k8KD1uBii_-JQxu0EQWIEiTsNOd9LKo5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.99091,
+              37.224109
+            ],
+            [
+              -6.995029,
+              37.219803
+            ],
+            [
+              -6.989965,
+              37.216523
+            ],
+            [
+              -6.986446,
+              37.221239
+            ],
+            [
+              -6.99091,
+              37.224109
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250505_Colonia_PHOROS_MDO",
+        "Fecha": "5/5/2025",
+        "Localidad": "Isla de la Liebre (Marismas del Odiel). Balsa E4",
+        "Descripcion": " Colonia de flamencos en maxima ocupacion (E4)",
+        "Taxon": "Flamenco comun (Phoenicopterus roseus)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "-",
+        "GSD": "-",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.990223,
+              37.218812
+            ],
+            [
+              -6.995544,
+              37.212797
+            ],
+            [
+              -6.993356,
+              37.209414
+            ],
+            [
+              -6.988978,
+              37.209038
+            ],
+            [
+              -6.983185,
+              37.208901
+            ],
+            [
+              -6.982069,
+              37.211259
+            ],
+            [
+              -6.98606,
+              37.215463
+            ],
+            [
+              -6.988678,
+              37.21806
+            ],
+            [
+              -6.990223,
+              37.218812
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250505_Colonia_PLALEU_MDO",
+        "Fecha": "5/5/2025",
+        "Localidad": "Isla de la Liebre (Marismas del Odiel). Balsa E2",
+        "Descripcion": " Colonia de espatulas con la incorporacion 7 dias antes de un grupo de 5000 parejas de flamencos",
+        "Taxon": "Espatula comun (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "-",
+        "GSD": "-",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.039519,
+              36.957162
+            ],
+            [
+              -6.040807,
+              36.955688
+            ],
+            [
+              -6.039262,
+              36.954967
+            ],
+            [
+              -6.03806,
+              36.956442
+            ],
+            [
+              -6.039519,
+              36.957162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250505_Don_Melendo_Garceras_Isla_Central",
+        "Fecha": "5/5/2025",
+        "Localidad": "Balsa de Don Melendo (Lebrija). Colonia Isla Central",
+        "Descripcion": "Fotogrametría de la colonia de Espátulas y otras garzas de la isla central de la Balsa D. Melendo. Es la primera vez que se ve.",
+        "Taxon": "Espátula común (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": 80.0,
+        "GSD": "--",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.045109,
+              36.959957
+            ],
+            [
+              -6.046171,
+              36.96054
+            ],
+            [
+              -6.047781,
+              36.958697
+            ],
+            [
+              -6.047137,
+              36.958242
+            ],
+            [
+              -6.045109,
+              36.959957
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250505_Don_Melendo_Garceras_Colonia_Norte",
+        "Fecha": "5/5/2025",
+        "Localidad": "Balsa de Don Melendo (Lebrija). Colonia Norte, Canal bajo el edificio confederacion",
+        "Descripcion": "Seguimiento de la colonia de garceras situada en el canal de al Norte del edificio de confederación.",
+        "Taxon": "Garcera",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": 80.0,
+        "GSD": "--",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.741068,
+              38.064514
+            ],
+            [
+              -2.749223,
+              38.055188
+            ],
+            [
+              -2.738678,
+              38.05093
+            ],
+            [
+              -2.730523,
+              38.062487
+            ],
+            [
+              -2.734214,
+              38.067149
+            ],
+            [
+              -2.741068,
+              38.064514
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250423_Quebranta_Localidad_2",
+        "Fecha": "23/4/2025",
+        "Localidad": "P.N. Cazorla. Localidad de Quebranta. Mirador Juan Leon",
+        "Descripcion": "Vuelo para valorar el estado de desarrollo de nido de quebrantahuesos y el acceso para el equipo de manejo.",
+        "Taxon": "Quebrantahuesos (Gypaetus barbatus)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "Variable",
+        "GSD": "N/A",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.570271,
+              38.176671
+            ],
+            [
+              -2.578426,
+              38.168372
+            ],
+            [
+              -2.566923,
+              38.159666
+            ],
+            [
+              -2.555248,
+              38.163986
+            ],
+            [
+              -2.5513,
+              38.175389
+            ],
+            [
+              -2.570271,
+              38.176671
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250423_Quebranta_Localidad_01",
+        "Fecha": "23/4/2025",
+        "Localidad": "P.N. Cazorla Quebranta localidad 01",
+        "Descripcion": "Vuelo de inspección para valorar el estado de desarrollo de nido de quebrantahuesos y el acceso para el equipo de manejo.",
+        "Taxon": "Quebrantahuesos (Gypaetus barbatus)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "Variable",
+        "GSD": "N/A",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.269844,
+              37.373414
+            ],
+            [
+              -6.269244,
+              37.370942
+            ],
+            [
+              -6.263193,
+              37.371675
+            ],
+            [
+              -6.264008,
+              37.373909
+            ],
+            [
+              -6.269844,
+              37.373414
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250429_Auditoria_Interna_Huevar",
+        "Fecha": "29/4/2025",
+        "Localidad": "Campo de vuelo Huevar del Aljarafe. Vereda de la Carne",
+        "Descripcion": "Vuelo demostrativo para auditoria interna para certificación de Calidad.",
+        "Taxon": "N/A",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Demostrativo",
+        "Piloto": "Miguel Angel Navarro",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "Variable",
+        "GSD": "N/A",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.997505,
+              37.294676
+            ],
+            [
+              -6.002312,
+              37.295223
+            ],
+            [
+              -6.005745,
+              37.28457
+            ],
+            [
+              -6.001282,
+              37.282795
+            ],
+            [
+              -5.997505,
+              37.294676
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250424_Canal_Guadaira_Garceras",
+        "Fecha": "24/4/2025",
+        "Localidad": "Colonia Garceras Canal de Guadaira",
+        "Descripcion": "Vuelo de seguimiento de la colonia de garcera del Canal de Guadaira (detras del poligono La Isla)",
+        "Taxon": "Espatula común (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": 60.0,
+        "GSD": "--",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/file/d/1Q-f6rUz2pnWMWo9gvt3uVDWaahokIfEE/view?usp=drive_link"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.179762,
+              36.459397
+            ],
+            [
+              -6.183024,
+              36.455877
+            ],
+            [
+              -6.177702,
+              36.451942
+            ],
+            [
+              -6.172766,
+              36.456671
+            ],
+            [
+              -6.179762,
+              36.459397
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250513_Vicario_PLALEU",
+        "Fecha": "13/5/2025",
+        "Localidad": "Salina El vicario. Bahia de Cadiz",
+        "Descripcion": "Seguimiento reproducción colonia Espatulas\n",
+        "Taxon": "Espatula comun (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": 110.0,
+        "GSD": 2.96,
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=19qG2slGYJPiT2aUXG_DuWRCy4J1eOoto"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.204829,
+              36.423803
+            ],
+            [
+              -6.203113,
+              36.423527
+            ],
+            [
+              -6.195302,
+              36.425703
+            ],
+            [
+              -6.195431,
+              36.429915
+            ],
+            [
+              -6.199851,
+              36.430157
+            ],
+            [
+              -6.204829,
+              36.423803
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250513_Industria_PLALEU",
+        "Fecha": "13/5/2025",
+        "Localidad": "Salina Industria. Dos nucleos. Bahia de Cadiz",
+        "Descripcion": "Seguimiento reproducción colonia Espatulas\n",
+        "Taxon": "Espatula comun (Platalea leucorodia)",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Fotogrametria e inspeccion",
+        "Piloto": "Jesus Chaves",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": "-",
+        "GSD": "-",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "-"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.868858,
+              37.300002
+            ],
+            [
+              -6.881561,
+              37.295086
+            ],
+            [
+              -6.91349,
+              37.267496
+            ],
+            [
+              -6.929283,
+              37.248914
+            ],
+            [
+              -6.922417,
+              37.231695
+            ],
+            [
+              -6.926193,
+              37.21748
+            ],
+            [
+              -6.897354,
+              37.248641
+            ],
+            [
+              -6.857872,
+              37.296998
+            ],
+            [
+              -6.868858,
+              37.300002
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Nombre": "20250526_HU_Tomamuestras",
+        "Fecha": "26/5/2025",
+        "Localidad": "Huelva",
+        "Descripcion": "Toma de muestra con Condor I para el Laboratorio de Huelva en la zona de Fosfoyesos",
+        "Taxon": "Tomamuestras",
+        "Departamento": "IDi",
+        "Tipo_Vuelo": "Toma de muestras",
+        "Piloto": "Miguel Angel Navarro",
+        "Dron": null,
+        "Sensor": "RGB",
+        "Altura_Vuelo": 30.0,
+        "GSD": "N/A",
+        "Contacto": "jesus.chaves.posadillo@juntadeandalucia.es",
+        "Imagen": "https://drive.google.com/open?id=1XAJr5VfikuY00_SezTtRlfqN1lr3kVho"
+      }
     }
   ]
 }
