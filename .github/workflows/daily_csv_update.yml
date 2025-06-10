@@ -1,5 +1,7 @@
 name: Daily CSV Update
 
+# Runs every morning to append new CSV records to Poligonos_RPAS.json
+
 on:
   schedule:
     - cron: '0 6 * * *'

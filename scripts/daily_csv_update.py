@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""Append new records from the local CSV to ``Poligonos_RPAS.json``.
+
+The script keeps track of the last processed row in
+``Geodatabase/last_processed_row.txt`` and only converts new rows from
+``Geodatabase/Geodatabase.csv`` to GeoJSON features. Conversion logic is
+reused from :mod:`update_geojson`.
+"""
+
 import csv
 import json
 from pathlib import Path
