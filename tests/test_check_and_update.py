@@ -68,3 +68,30 @@ def test_main_with_change(tmp_path, monkeypatch):
     assert ret == 0
     assert called['flag'] is True
     assert hash_file.read_text() == compute_hash(csv_file)
+
+
+def test_main_from_other_cwd(tmp_path, monkeypatch, capsys):
+    """main() should locate files relative to the script even when cwd changes."""
+    import scripts.check_and_update as mod
+
+    # Use repository CSV but a temporary hash file to avoid side effects
+    repo_csv = mod.CSV_PATH
+    hash_file = tmp_path / ".last_csv_hash"
+    monkeypatch.setattr(mod, "HASH_PATH", hash_file)
+
+    called = {"flag": False}
+
+    def fake_update():
+        called["flag"] = True
+
+    monkeypatch.setattr(mod, "update_geojson", fake_update)
+    monkeypatch.chdir(tmp_path)
+
+    ret = mod.main()
+    captured = capsys.readouterr()
+
+    assert ret == 0
+    # The CSV should have been found and processed (i.e. no not-found message)
+    assert "CSV not found" not in captured.out
+    assert called["flag"] is True
+    assert hash_file.read_text() == mod.compute_hash(repo_csv)
