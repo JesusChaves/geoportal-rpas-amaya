@@ -58,6 +58,12 @@ automático (`.github/workflows/daily_csv_update.yml`) también realiza esta
 actualización de forma programada, por lo que el script resulta útil sobre todo
 para pruebas locales.
 
+El propio workflow ejecuta `scripts/check_and_update.py`, que comprueba si ha
+cambiado el CSV antes de regenerar el GeoJSON. Para lograrlo crea o actualiza
+`Geodatabase/.last_csv_hash`, un archivo que almacena el hash del CSV y evita
+generaciones innecesarias. Dicho archivo se versiona automáticamente cuando el
+workflow realiza sus commits.
+
 ## 🛠 Tecnologías Utilizadas
 - **HTML5**
 - **CSS3**
