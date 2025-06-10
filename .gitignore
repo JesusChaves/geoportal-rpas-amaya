@@ -11,5 +11,10 @@ npm-debug.log
 *.log
 *.cache
 
+# Ignorar cachés de Python y Pytest
+__pycache__/
+tests/__pycache__/
+.pytest_cache/
+
 # Ignorar imágenes temporales o archivos de prueba (si los usaste)
 images/*.tmp
