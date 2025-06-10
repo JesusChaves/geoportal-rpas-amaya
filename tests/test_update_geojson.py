@@ -35,13 +35,13 @@ def test_row_to_geojson_feature_returns_valid_geojson():
     assert 'properties' in feature
 
 
-def test_merge_features_adds_new_and_skips_existing():
+def test_merge_features_adds_new_and_replaces_existing():
     existing = [
-        {"type": "Feature", "properties": {"Nombre": "A"}},
-        {"type": "Feature", "properties": {"Nombre": "B"}},
+        {"type": "Feature", "properties": {"Nombre": "A", "v": 1}},
+        {"type": "Feature", "properties": {"Nombre": "B", "old": True}},
     ]
     new = [
-        {"type": "Feature", "properties": {"Nombre": "B"}},
+        {"type": "Feature", "properties": {"Nombre": "B", "old": False}},
         {"type": "Feature", "properties": {"Nombre": "C"}},
     ]
 
@@ -49,6 +49,7 @@ def test_merge_features_adds_new_and_skips_existing():
     nombres = [f["properties"]["Nombre"] for f in merged]
 
     assert nombres == ["A", "B", "C"]
+    assert merged[1]["properties"]["old"] is False
 
 
 def test_parse_wkt_polygon_with_hole():
