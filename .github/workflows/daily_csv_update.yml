@@ -25,13 +25,13 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Detect and update GeoJSON
-        run: python scripts/daily_csv_update.py
+        run: python scripts/check_and_update.py
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
-          git add Poligonos_RPAS.json Geodatabase/last_processed_row.txt
+          git add Poligonos_RPAS.json Geodatabase/.last_csv_hash
           git commit -m "Update GeoJSON with new CSV rows" || echo "No changes"
 
       - name: Create Pull Request
