@@ -45,6 +45,19 @@ Los polígonos de vuelo se almacenan en `Geodatabase/Geodatabase.csv`. El script
 lee ese archivo para generar `Poligonos_RPAS.json`. La acción de GitHub que
 mantiene actualizado el repositorio se apoya en ese CSV local.
 
+### Actualizar el GeoJSON manualmente
+Cuando edites `Geodatabase/Geodatabase.csv` ejecuta el script para regenerar el
+archivo `Poligonos_RPAS.json`:
+
+```bash
+python update_geojson.py
+```
+
+Así podrás revisar los cambios en local antes de subirlos. El workflow
+automático (`.github/workflows/daily_csv_update.yml`) también realiza esta
+actualización de forma programada, por lo que el script resulta útil sobre todo
+para pruebas locales.
+
 ## 🛠 Tecnologías Utilizadas
 - **HTML5**
 - **CSS3**
