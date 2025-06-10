@@ -1,31 +1,16 @@
 # update_geojson.py
 import os
+from pathlib import Path
 import pandas as pd
-import requests
 import json
-import io
 from shapely import wkt
 import shapely.geometry
 
 # Ruta al GeoJSON en disco
 GEOJSON_PATH = "Poligonos_RPAS.json"
 
-# URL o identificador del Sheet.
-# Se obtiene de la variable de entorno ``SHEET_ID`` y se
-# utiliza un valor por defecto si dicha variable no está definida.
-SHEET_ID = os.getenv("SHEET_ID") or "1Vy5PuzBZwBlg4r4mIK98eX0_NfDpTTRVkxvXL_tVGuw"
-
-# ``SHEET_ID`` puede contener la URL completa al CSV o solo el identificador
-# del documento de Google Sheets. En este último caso se construye la ruta de
-# exportación a CSV.
-CSV_URL = (
-    SHEET_ID
-    if SHEET_ID.startswith("http")
-    else f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
-)
-
-# Tiempo máximo de espera para la descarga del CSV (en segundos)
-TIMEOUT = 10
+# Ruta al CSV local
+CSV_PATH = Path(__file__).parent / "Geodatabase" / "Geodatabase.csv"
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def row_to_geojson_feature(row):
@@ -84,17 +69,12 @@ def merge_features(existing, new):
     return merged
 
 def update_geojson():
-    """Descarga el CSV de Google Sheets y actualiza el GeoJSON existente."""
-    try:
-        resp = requests.get(CSV_URL, timeout=TIMEOUT)
-        if resp.status_code != 200:
-            print(f"Error al descargar el CSV: código HTTP {resp.status_code}")
-            return
-    except requests.RequestException as e:
-        print(f"Error de red al descargar el CSV: {e}")
+    """Carga el CSV local y actualiza el GeoJSON existente."""
+    if not CSV_PATH.exists():
+        print(f"No se encontró el archivo CSV en {CSV_PATH}")
         return
 
-    df = pd.read_csv(io.StringIO(resp.text))
+    df = pd.read_csv(CSV_PATH)
 
     # Features nuevos a partir del sheet
     new_features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
