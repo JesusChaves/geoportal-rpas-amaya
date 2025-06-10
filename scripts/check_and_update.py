@@ -11,8 +11,10 @@ sys.path.insert(0, str(ROOT_DIR))
 
 from update_geojson import update_geojson
 
-CSV_PATH = Path("Geodatabase/Geodatabase.csv")
-HASH_PATH = Path("Geodatabase/.last_csv_hash")
+# Resolve paths relative to the repository root so the script can be executed
+# from any working directory.
+CSV_PATH = ROOT_DIR / "Geodatabase" / "Geodatabase.csv"
+HASH_PATH = ROOT_DIR / "Geodatabase" / ".last_csv_hash"
 
 
 def compute_hash(path: Path) -> str:
