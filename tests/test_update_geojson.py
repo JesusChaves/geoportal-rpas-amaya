@@ -1,6 +1,11 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from update_geojson import (
     row_to_geojson_feature,
     merge_features,
+    parse_wkt_polygon,
 )
 
 
@@ -44,4 +49,20 @@ def test_merge_features_adds_new_and_skips_existing():
     nombres = [f["properties"]["Nombre"] for f in merged]
 
     assert nombres == ["A", "B", "C"]
+
+
+def test_parse_wkt_polygon_with_hole():
+    wkt = "POLYGON ((0 0, 4 0, 4 4, 0 4, 0 0), (1 1, 2 1, 2 2, 1 2, 1 1))"
+    geom = parse_wkt_polygon(wkt)
+
+    assert geom["type"] == "Polygon"
+    assert len(geom["coordinates"]) == 2
+
+
+def test_parse_wkt_multipolygon():
+    wkt = "MULTIPOLYGON (((0 0,1 0,1 1,0 1,0 0)), ((2 2,3 2,3 3,2 3,2 2)))"
+    geom = parse_wkt_polygon(wkt)
+
+    assert geom["type"] == "MultiPolygon"
+    assert len(geom["coordinates"]) == 2
 
