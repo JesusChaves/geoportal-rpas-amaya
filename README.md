@@ -15,6 +15,11 @@ Este es un proyecto web que muestra un mapa interactivo con misiones de vuelo co
 4. Guarda los cambios y espera unos minutos.
 5. Accede a tu web en: `https://tuusuario.github.io/geoportal-rpas-amaya/`.
 
+## 📥 Datos
+Los registros de misiones se encuentran en `Geodatabase/Geodatabase.csv`.
+El script `update_geojson.py` genera el archivo `Poligonos_RPAS.json` a partir de este CSV.
+La acción de GitHub usa solo este archivo local y ya no descarga datos de Google Sheets.
+
 ## 📂 Estructura del Proyecto
 ```
 geoportal-rpas-amaya/
