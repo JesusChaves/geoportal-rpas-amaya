@@ -56,9 +56,11 @@ mantiene actualizado el repositorio se apoya en ese CSV local.
 Si tienes preguntas, puedes contactarme en `tuemail@example.com`. 🚀
 
 ## 🧪 Pruebas
-Antes de ejecutar la suite de tests con **pytest**, ejecuta `./setup.sh` para instalar las dependencias:
+Antes de ejecutar la suite de tests, ejecuta `./setup.sh` para instalar las dependencias.
+Para que las pruebas reconozcan los módulos del proyecto puedes exportar la variable
+`PYTHONPATH` con la ruta del repositorio o simplemente utilizar `python -m pytest -q`:
 
 ```bash
 ./setup.sh        # instala las dependencias
-pytest
+python -m pytest -q
 ```
