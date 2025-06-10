@@ -123,14 +123,22 @@ def load_existing_features(path: str = GEOJSON_PATH):
 
 
 def merge_features(existing, new):
-    """Combina listas de features evitando duplicados por nombre."""
-    names = {f.get("properties", {}).get("Nombre") for f in existing}
+    """Combina listas de features reemplazando por nombre si coincide."""
     merged = list(existing)
+    index_by_name = {}
+    for idx, feat in enumerate(merged):
+        name = feat.get("properties", {}).get("Nombre")
+        if name not in index_by_name:
+            index_by_name[name] = idx
+
     for feat in new:
         name = feat.get("properties", {}).get("Nombre")
-        if name not in names:
+        if name in index_by_name:
+            merged[index_by_name[name]] = feat
+        else:
+            index_by_name[name] = len(merged)
             merged.append(feat)
-            names.add(name)
+
     return merged
 
 def update_geojson():
