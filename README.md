@@ -13,7 +13,7 @@ Este es un proyecto web que muestra un mapa interactivo con misiones de vuelo co
 2. Ve a **Configuración → Páginas** en tu repositorio.
 3. En "Fuente", selecciona **main** (o la rama principal) y la carpeta **root**.
 4. Guarda los cambios y espera unos minutos.
-5. Accede a tu web en: `https://tuusuario.github.io/geoportal-rpas-amaya/`.
+5. Accede a tu web en: `https://jesuschaves.github.io/geoportal-rpas-amaya/`.
 
 ## 📥 Datos
 Los registros de misiones se encuentran en `Geodatabase/Geodatabase.csv`.
