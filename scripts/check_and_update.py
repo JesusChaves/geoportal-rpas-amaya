@@ -37,6 +37,8 @@ def main() -> int:
         except Exception:
             pass
 
+    print(f"Current hash: {current}, Last hash: {last}")
+
     if current == last:
         print("CSV unchanged. Nothing to do.")
         return 0
