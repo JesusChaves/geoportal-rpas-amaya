@@ -22,17 +22,59 @@ CSV_PATH = Path(__file__).parent / "Geodatabase" / "Geodatabase.csv"
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
 def parse_wkt_polygon(wkt_text: str):
-    """Convierte una cadena WKT POLYGON a coordenadas GeoJSON."""
-    try:
-        inner = wkt_text.strip()
-        if inner.upper().startswith("POLYGON"):
-            inner = inner[len("POLYGON"):].strip()
-        inner = inner.lstrip("(").lstrip("(").rstrip(")").rstrip(")")
-        points = []
-        for part in inner.split(','):
+    """Convierte WKT de tipo POLYGON o MULTIPOLYGON a coordenadas GeoJSON."""
+
+    def _extract_parts(text: str):
+        """Extrae secciones entre paréntesis al primer nivel."""
+        parts = []
+        depth = 0
+        start = None
+        for i, ch in enumerate(text):
+            if ch == '(':  # nueva subsección
+                if depth == 0:
+                    start = i + 1
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+                if depth == 0 and start is not None:
+                    parts.append(text[start:i])
+            elif ch == ',' and depth == 0:
+                # separador entre polígonos o anillos
+                continue
+        if not parts and text:
+            parts.append(text)
+        return parts
+
+    def _parse_ring(ring_text: str):
+        coords = []
+        for part in ring_text.split(','):
             x_str, y_str = part.strip().split()[:2]
-            points.append([float(x_str), float(y_str)])
-        return {"type": "Polygon", "coordinates": [points]}
+            coords.append([float(x_str), float(y_str)])
+        return coords
+
+    try:
+        text = wkt_text.strip()
+        upper = text.upper()
+
+        if upper.startswith('MULTIPOLYGON'):
+            text = text[len('MULTIPOLYGON'):].strip()
+            if text.startswith('(') and text.endswith(')'):
+                text = text[1:-1]
+            polygon_texts = _extract_parts(text)
+            multipoly = []
+            for poly_text in polygon_texts:
+                rings_texts = _extract_parts(poly_text)
+                rings = [_parse_ring(r) for r in rings_texts]
+                multipoly.append(rings)
+            return {"type": "MultiPolygon", "coordinates": multipoly}
+        else:
+            if upper.startswith('POLYGON'):
+                text = text[len('POLYGON'):].strip()
+            if text.startswith('(') and text.endswith(')'):
+                text = text[1:-1]
+            rings_texts = _extract_parts(text)
+            rings = [_parse_ring(r) for r in rings_texts]
+            return {"type": "Polygon", "coordinates": rings}
     except Exception as e:
         raise ValueError(f"Error al parsear WKT: {e}")
 
