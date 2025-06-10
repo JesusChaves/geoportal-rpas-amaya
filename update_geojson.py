@@ -1,10 +1,18 @@
 # update_geojson.py
 import os
 from pathlib import Path
-import pandas as pd
+import csv
 import json
-from shapely import wkt
-import shapely.geometry
+
+
+def _num_or_str(value):
+    """Convierte valores numéricos en float si es posible."""
+    try:
+        if value is None or value == "" or str(value).lower() == "n/a" or str(value) == "-":
+            return value
+        return float(value)
+    except ValueError:
+        return value
 
 # Ruta al GeoJSON en disco
 GEOJSON_PATH = "Poligonos_RPAS.json"
@@ -13,30 +21,45 @@ GEOJSON_PATH = "Poligonos_RPAS.json"
 CSV_PATH = Path(__file__).parent / "Geodatabase" / "Geodatabase.csv"
 
 # Función que transforma cada registro del Sheet a un Feature GeoJSON
+def parse_wkt_polygon(wkt_text: str):
+    """Convierte una cadena WKT POLYGON a coordenadas GeoJSON."""
+    try:
+        inner = wkt_text.strip()
+        if inner.upper().startswith("POLYGON"):
+            inner = inner[len("POLYGON"):].strip()
+        inner = inner.lstrip("(").lstrip("(").rstrip(")").rstrip(")")
+        points = []
+        for part in inner.split(','):
+            x_str, y_str = part.strip().split()[:2]
+            points.append([float(x_str), float(y_str)])
+        return {"type": "Polygon", "coordinates": [points]}
+    except Exception as e:
+        raise ValueError(f"Error al parsear WKT: {e}")
+
+
 def row_to_geojson_feature(row):
     try:
         geom_wkt = row['COORDENADAS POLIGONO']
-        shape = wkt.loads(geom_wkt)
-        coords = shapely.geometry.mapping(shape)
+        coords = parse_wkt_polygon(geom_wkt)
     except Exception as e:
         print(f"Fila ignorada por error WKT: {e} - fila: {row}")
         return None
 
     properties = {
-        "Nombre": row['NOMBRE DE LA MISION'],
-        "Fecha": row['FECHA'],
-        "Localidad": row['LOCALIDAD'],
-        "Descripcion": row['DESCRIPCION'],
-        "Taxon": row['TAXON'],
-        "Departamento": row['DEPARTAMENTO'],
-        "Tipo_Vuelo": row['TIPO DE VUELO'],
-        "Piloto": row['PILOTO'],
-        "Dron": row['DRON'],
-        "Sensor": row['SENSOR'],
-        "Altura_Vuelo": row['ALTURA DE VUELO (m)'],
-        "GSD": row['GSD (cm/px)'],
-        "Contacto": row['CONTACTO'],
-        "Imagen": row['IMAGEN ORTOMOSAICO']
+        "Nombre": row.get('NOMBRE DE LA MISION'),
+        "Fecha": row.get('FECHA'),
+        "Localidad": row.get('LOCALIDAD'),
+        "Descripcion": row.get('DESCRIPCION'),
+        "Taxon": row.get('TAXON'),
+        "Departamento": row.get('DEPARTAMENTO'),
+        "Tipo_Vuelo": row.get('TIPO DE VUELO'),
+        "Piloto": row.get('PILOTO'),
+        "Dron": row.get('DRON'),
+        "Sensor": row.get('SENSOR'),
+        "Altura_Vuelo": _num_or_str(row.get('ALTURA DE VUELO (m)')),
+        "GSD": _num_or_str(row.get('GSD (cm/px)')),
+        "Contacto": row.get('CONTACTO'),
+        "Imagen": row.get('IMAGEN ORTOMOSAICO')
     }
     return {
         "type": "Feature",
@@ -74,11 +97,13 @@ def update_geojson():
         print(f"No se encontró el archivo CSV en {CSV_PATH}")
         return
 
-    df = pd.read_csv(CSV_PATH)
-
-    # Features nuevos a partir del sheet
-    new_features = [row_to_geojson_feature(row) for idx, row in df.iterrows()]
-    new_features = [feature for feature in new_features if feature is not None]
+    with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        new_features = []
+        for row in reader:
+            feature = row_to_geojson_feature(row)
+            if feature is not None:
+                new_features.append(feature)
 
     # Carga los existentes y combínalos
     existing = load_existing_features(GEOJSON_PATH)
