@@ -33,6 +33,13 @@ geoportal-rpas-amaya/
 
 > **Nota:** Leaflet se carga desde un CDN y no está incluido en la carpeta `js`.
 
+## 📊 Datos
+
+Los polígonos de vuelo se almacenan en `Geodatabase/Geodatabase.csv`. El script
+`update_geojson.py` ya **no** descarga la información de Google Sheets, sino que
+lee ese archivo para generar `Poligonos_RPAS.json`. La acción de GitHub que
+mantiene actualizado el repositorio se apoya en ese CSV local.
+
 ## 🛠 Tecnologías Utilizadas
 - **HTML5**
 - **CSS3**
