@@ -1,5 +1,8 @@
 name: Generar GeoJSON
 
+# Este workflow ejecuta `update_geojson.py` usando el archivo
+# `Geodatabase/Geodatabase.csv` para generar el GeoJSON.
+
 on:
   schedule:
     - cron: '0 6 * * *'
@@ -8,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      SHEET_ID: ${{ secrets.SHEET_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -46,5 +47,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Actualización automática del GeoJSON (.json)"
           title: "Actualización automática del GeoJSON"
-          body: "Este PR actualiza el archivo Poligonos_RPAS.json con los datos más recientes del Sheet."
+          body: "Este PR actualiza el archivo Poligonos_RPAS.json con los datos de Geodatabase/Geodatabase.csv."
           branch: auto/update-geojson
